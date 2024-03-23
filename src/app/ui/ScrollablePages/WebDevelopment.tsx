@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactNode } from "react";
-import Icon from "./Icon";
+import Icon from "../Icon";
 import ScrollablePage from "./ScrollablePage";
 
 interface ProjectInfo {
@@ -20,7 +20,7 @@ const JobExperience = ({title, children, icons, employer, date}: Readonly<JobExp
     <div className="w-full items-center flex flex-row">
         <p className="text-subtitle text-left pr-2"> {title} </p>
         <div className="flex flex-row">
-            { icons.map(({href, alt}, key) => <Icon key={key} href={href} alt={alt} className="max-w-6 max-h-6" />) }
+            { icons.map(({href, alt}, key) => <Icon key={key} href={href} alt={alt} className="max-w-6 max-h-6 text-primary" />) }
         </div>
     </div>
     <p className="w-full items-center pr-5 text-md mb-3">{employer} | <span className="text-sm">{date.start} - {date.end}</span></p>
@@ -32,7 +32,7 @@ const Project = ({title, children, icons, date}: Readonly<ProjectInfo>) =>
     <div className="w-full items-center flex flex-row">
         <p className="text-subtitle text-left pr-2"> {title} </p>
         <div className="flex flex-row">
-            { icons.map(({href, alt}, key) => <Icon key={key} href={href} alt={alt} className="max-w-6 max-h-6" />) }
+            { icons.map(({href, alt}, key) => <Icon key={key} href={href} alt={alt} className="max-w-6 max-h-6 text-primary" />) }
         </div>
     </div>
     <p className="w-full items-center pr-5 text-md mb-3"><span className="text-sm">{date.start} - {date.end}</span></p>
@@ -44,7 +44,7 @@ export default () =>
     {/* Title */}
     <p className="text-title text-center items-center justify-between">Web Development</p>
     {/* Page icon */}
-    <Icon className="h-28" href="/icons/web_development.svg#icon"/>
+    <Icon className="h-28 text-primary" href="/icons/web_development.svg#icon"/>
     {/* Work experience */}
     <div className="flex flex-col h-full justify-between pl-10">
         <JobExperience
