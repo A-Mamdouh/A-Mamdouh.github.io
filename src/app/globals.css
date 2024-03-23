@@ -3,31 +3,79 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary: #222831;
+  --secondary: rgb(182, 103, 24);
+  --bg-primary: #C1C6CF;
+  --bg-secondary: #EEEEEE;
+}
+
+:root.dark {
+  --bg-primary: #222831;
+  --bg-secondary: #31363F;
+  --primary: #EEEEEE;
+  --secondary: #FFBA08dd;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --bg-primary: #222831;
+    --bg-secondary: #31363F;
+    --primary: #EEEEEE;
+    --secondary: #FFBA08dd;
+  }
+  :root.light {
+    --primary: #222831;
+    --secondary: rgb(182, 103, 24);
+    --bg-primary: #C1C6CF;
+    --bg-secondary: #EEEEEE;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--primary);
+  background: var(--bg-secondary);
+}
+
+.text-primary {
+  color: var(--primary);
+  fill: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+  fill: var(--secondary); 
+}
+
+.bg-primary {
+  background: var(--bg-primary);
+}
+
+.bg-secondary {
+  background: var(--bg-secondary);
+}
+
+.webdev-container {
+  display: grid;
+  grid-template-rows: 1fr repeat(2, 2fr);
+  grid-template-columns: 4fr 1fr;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer components {
+  .text-title {
+    @apply text-5xl;
+  }
+
+  .text-subtitle {
+    @apply text-2xl;
+  }
+}
+
+.description {
+  max-width: 40rem;
 }
