@@ -39,60 +39,63 @@ const Project = ({title, children, icons, date}: Readonly<ProjectInfo>) =>
     {children}
 </div>
 
-export default () =>
-<ScrollablePage className="grid webdev-container">
-    {/* Title */}
-    <p className="text-title text-center items-center justify-between">Web Development</p>
-    {/* Page icon */}
-    <Icon className="h-28 text-primary" href="/icons/web_development.svg#icon"/>
-    {/* Work experience */}
-    <div className="flex flex-col h-full justify-between pl-10">
-        <JobExperience
-            title="React Native Intern"
-            icons={[
-                {href: "/icons/react_native.svg#icon", alt: "ReactNative"},
-                {href: "/icons/firebase.svg#icon", alt: "Firebase"},
-            ]}
-            employer="Sequel Solutions"
-            date={{start: "Jan. 20", end: "Mar. 20"}}
-        >
-            <Description>
-                I implemented a new search feature that worked with 
-                weather data to find an appropriate location/time. 
-                I also created a Firebase caching service and integrated
-                it into the application.
-            </Description>
-        </JobExperience>
-        <JobExperience
-            title="Software Developer"
-            icons={[
-                {href: "/icons/react_native.svg#icon", alt: "ReactNative"},
-                {href: "/icons/firebase.svg#icon", alt: "Firebase"},
-            ]}
-            employer="Sequel Solutions"
-            date={{start: "Mar. 20", end: "Jul. 21"}}
-        >
-            <Description>
-                I worked with the frontend team on a trip reservation app
-                by updating a deprecated legacy code base in React Native
-                to a modern, lightweight version that had 30% faster load times.
-                I also worked on the ExpressJS backend.
-            </Description>
-        </JobExperience>
-    </div>
-    <div></div>
-    <div className="flex flex-col h-full justify-between pl-10">
-        <Project
-            title="Sumerge Investors Web Portal"
-            icons={[
-                {href: "/icons/react.svg#icon", alt:"ReactJS"},
-                {href: "/icons/mongodb.svg#icon", alt:"MongoDB"},
-            ]}
-            date={{start: "Sep. 18", end: "Apr. 19"}}
-        >
-            <Description>
-                This is a MERN project to digitize investors' processes for the government. I implemented the features for fees calculation, update and payment, PDF generation of contracts, and a tool for the government portal to create new forms to accommodate policy changes.
-            </Description>
-        </Project>
-    </div>
-</ScrollablePage>
+export default function WebDevelopmentPage () {
+    return (
+        <ScrollablePage className="grid webdev-container">
+            {/* Title */}
+            <p className="text-title text-center items-center justify-between">Web Development</p>
+            {/* Page icon */}
+            <Icon className="h-28 text-primary" href="/icons/web_development.svg#icon"/>
+            {/* Work experience */}
+            <div className="flex flex-col h-full justify-between pl-10">
+                <JobExperience
+                    title="React Native Intern"
+                    icons={[
+                        {href: "/icons/react_native.svg#icon", alt: "ReactNative"},
+                        {href: "/icons/firebase.svg#icon", alt: "Firebase"},
+                    ]}
+                    employer="Sequel Solutions"
+                    date={{start: "Jan. 20", end: "Mar. 20"}}
+                >
+                    <Description>
+                        I implemented a new search feature that worked with 
+                        weather data to find an appropriate location/time. 
+                        I also created a Firebase caching service and integrated
+                        it into the application.
+                    </Description>
+                </JobExperience>
+                <JobExperience
+                    title="Software Developer"
+                    icons={[
+                        {href: "/icons/react_native.svg#icon", alt: "ReactNative"},
+                        {href: "/icons/firebase.svg#icon", alt: "Firebase"},
+                    ]}
+                    employer="Sequel Solutions"
+                    date={{start: "Mar. 20", end: "Jul. 21"}}
+                >
+                    <Description>
+                        I worked with the frontend team on a trip reservation app
+                        by updating a deprecated legacy code base in React Native
+                        to a modern, lightweight version that had 30% faster load times.
+                        I also worked on the ExpressJS backend.
+                    </Description>
+                </JobExperience>
+            </div>
+            <div></div>
+            <div className="flex flex-col h-full justify-between pl-10">
+                <Project
+                    title="Sumerge Investors Web Portal"
+                    icons={[
+                        {href: "/icons/react.svg#icon", alt:"ReactJS"},
+                        {href: "/icons/mongodb.svg#icon", alt:"MongoDB"},
+                    ]}
+                    date={{start: "Sep. 18", end: "Apr. 19"}}
+                >
+                    <Description>
+                        This is a MERN project to digitize {"investors'"} processes for the government. I implemented the features for fees calculation, update and payment, PDF generation of contracts, and a tool for the government portal to create new forms to accommodate policy changes.
+                    </Description>
+                </Project>
+            </div>
+        </ScrollablePage>
+    );
+}
