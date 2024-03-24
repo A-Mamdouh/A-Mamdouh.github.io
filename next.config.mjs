@@ -7,12 +7,6 @@ const nextConfig = {
     output: "export",
 
     /**
-     * Set base path. This is the slug of the GitHub repository
-     * 
-     */
-    basePath: "/",
-
-    /**
      * Disable server-based image optimization. Next.Js does not support dynamic features with static exports.
      */
     images: {
