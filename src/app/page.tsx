@@ -1,13 +1,15 @@
-import MainPage from "./ui/ScrollablePages/MainPage";
-import WebDevelopmentPage from "./ui/ScrollablePages/WebDevelopment";
+import Content from "./ui/Content/Content";
+import TitleCard from "./ui/TitleCard/TitleCard";
 
 function Page () {
   return (
-    <main className="flex min-h-screen flex-col items-center w-full justify-between p-0 m-0">
-      <MainPage />
-      <WebDevelopmentPage />
+    <main className="main">
+      <TitleCard />
+      <div className="content">
+          <Content/>
+      </div>
     </main>
   );
 }
 
-export default Page;
+export default Page; 

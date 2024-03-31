@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes title-animation {
+    0% {
+        @apply
+            w-full
+        ;
+        border-bottom: 1px solid var(--primary);
+    }
+
+    40% {
+        @apply
+            w-2/5
+        ;
+        border-bottom: none;
+    }
+
+    100% {
+        @apply
+            w-2/5
+        ;
+        border-bottom: none;
+    }
+}
+
+.buffer-div {
+    @apply
+        min-h-[fullvh]
+    ;
+}
+
+
+@layer components {
+    .profile-icon {
+        @apply
+          inline
+          fill-[var(--bg-secondary)]
+          bg-[var(--primary)]
+          w-[299px]
+          h-[258.98px]
+        ;
+    }
+
+    .title {
+        @apply
+          fixed
+          top-14
+          text-center
+          py-10
+          right-0
+        ;
+        box-sizing: border-box;
+        animation: title-animation auto ease-in-out;
+        animation-fill-mode: forwards;
+        animation-timeline: --page-scroll;
+        z-index: 1;
+    }
+
+    .container-social {
+        @apply
+            w-full
+            h-16
+            mt-5
+            flex
+            flex-row
+            justify-center
+        ;
+    }
+
+    .social {
+        @apply
+            w-24;
+        .icon {
+            @apply fill-[var(--primary)];
+        }
+    }
+}

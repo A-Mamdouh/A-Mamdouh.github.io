@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .buffer-div {
+        @apply
+            min-h-[100vh]
+        ;
+    }
+}
+
+@keyframes content-animation {
+    0% {
+      @apply
+        opacity-[0%]
+      ;
+    }
+  
+    20% {
+      @apply
+        opacity-[0%]
+      ;
+    }
+  
+    40% {
+      @apply
+        opacity-[100%]
+      ;
+    }
+  
+    90% {
+      @apply
+        opacity-[0%]
+      ;
+    }
+  
+    100% {
+      @apply
+        opacity-[0%]
+      ;
+    }
+  }
