@@ -9,7 +9,7 @@ function Content () {
             {/* Empty div for the title animation to work before anything is shown */}
             <div className="buffer-div"> </div>
             <div className="h-[60vh]">
-                <p className="text-description px-56">
+                <p className="text-description content-aboutme">
                     In 2014, I was curious about combinatorics and algorithms.
                     I started reading about combinatorics as well as well as learning Python by reading the documentation.
                     Today, I have a bachelor in computer science, I am experienced in most common programming domains.

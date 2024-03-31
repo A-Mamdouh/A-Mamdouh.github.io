@@ -20,6 +20,7 @@
     100% {
         @apply
             w-2/5
+            top-0
         ;
         border-bottom: none;
     }
@@ -50,6 +51,8 @@
           text-center
           py-10
           right-0
+          justify-center
+          content-center
         ;
         box-sizing: border-box;
         animation: title-animation auto ease-in-out;

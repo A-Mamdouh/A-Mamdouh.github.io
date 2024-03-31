@@ -10,6 +10,17 @@
     }
 }
 
+.text-description {
+  @apply
+    text-2xl
+    font-medium
+    max-w-[70rem]
+    min-w-[25rem]
+  ;
+  animation: content-animation auto ease-in-out;
+  animation-timeline: --page-scroll;
+}
+
 @keyframes content-animation {
     0% {
       @apply
@@ -23,21 +34,15 @@
       ;
     }
   
-    40% {
+    60% {
       @apply
         opacity-[100%]
       ;
     }
   
-    90% {
-      @apply
-        opacity-[0%]
-      ;
-    }
-  
     100% {
       @apply
-        opacity-[0%]
+        opacity-[100%]
       ;
     }
   }

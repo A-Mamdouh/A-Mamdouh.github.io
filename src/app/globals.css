@@ -84,17 +84,6 @@ html {
     box-sizing: border-box;
   }
 
-  .text-description {
-    @apply
-      text-2xl
-      font-medium
-    ;
-  }
-
-  .content-aboutme {
-    animation: content-animation auto ease-in-out;
-    animation-timeline: --page-scroll;
-  }
 
   .nav {
     @apply
