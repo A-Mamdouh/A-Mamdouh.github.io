@@ -9,12 +9,19 @@ const useScrollAnimator = ({nFrames}: Readonly<{nFrames: number}>) => {
     useEffect(() => {
         // Create observer
         observerRef.current = new IntersectionObserver((entries) => {
+            let ratio = 0;
             entries.forEach(entry => {
-                const ratio = entry.intersectionRatio;
-                if(animatedRef.current) {
-                    animatedRef.current.style.animationDelay = `${-ratio}s`;
-                }
+                ratio = entry.intersectionRatio;
             })
+            if(ratio < 1 / (nFrames - 1)) {
+                ratio = 0;
+            }
+            if(ratio > (nFrames-1) / nFrames) {
+                ratio = 1;
+            }
+            if(animatedRef.current) {
+                animatedRef.current.style.animationDelay = `${-ratio}s`;
+            }
         },
         {
             threshold: Array(nFrames).fill(0).map((_, i) => i/(nFrames-1))
