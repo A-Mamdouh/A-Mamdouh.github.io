@@ -83,17 +83,6 @@ html {
     ;
     box-sizing: border-box;
   }
-
-
-  .nav {
-    @apply
-      w-full
-      h-14
-      flex
-      flex-row
-    ;
-    border-bottom: 1px solid var(--primary);
-  }
 }
 
 

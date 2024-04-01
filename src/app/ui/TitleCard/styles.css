@@ -3,33 +3,21 @@
 @tailwind utilities;
 
 @keyframes title-animation {
-    0% {
-        @apply
-            w-full
-        ;
-        border-bottom: 1px solid var(--primary);
-    }
-
-    40% {
-        @apply
-            w-2/5
-        ;
-        border-bottom: none;
-    }
-
     100% {
         @apply
-            w-2/5
-            top-0
+            w-full
+            h-[100vh]
         ;
-        border-bottom: none;
+        top: 0;
     }
-}
 
-.buffer-div {
-    @apply
-        min-h-[fullvh]
-    ;
+    0% {
+        @apply
+            w-2/5
+            h-[70vh]
+        ;
+        top: 15vh;
+    }
 }
 
 
@@ -37,28 +25,35 @@
     .profile-icon {
         @apply
           inline
-          fill-[var(--bg-secondary)]
-          bg-[var(--primary)]
-          w-[299px]
-          h-[258.98px]
+          fill-[var(--primary)]
+          flex-1
+          w-full
+          h-1/2
+        ;
+    }
+
+    .title-text-container {
+        @apply
+            flex
+            flex-col
+            justify-end
         ;
     }
 
     .title {
         @apply
           fixed
-          top-14
+          top-0
+          w-full
           text-center
-          py-10
           right-0
           justify-center
           content-center
+          h-[100vh]
         ;
         box-sizing: border-box;
-        animation: title-animation auto ease-in-out;
-        animation-fill-mode: forwards;
-        animation-timeline: --page-scroll;
-        z-index: 1;
+        animation: title-animation 1s paused;
+        animation-delay: 0s;
     }
 
     .container-social {
@@ -72,11 +67,21 @@
         ;
     }
 
+    .title-buffer {
+        @apply
+            w-full
+            h-[100vh]
+        ;
+    }
+
     .social {
         @apply
-            w-24;
+            w-24
+        ;
         .icon {
-            @apply fill-[var(--primary)];
+            @apply
+                fill-[var(--primary)]
+            ;
         }
     }
 }

@@ -5,20 +5,32 @@
 @layer components {
     .buffer-div {
         @apply
-            min-h-[100vh]
+            min-h-[50vh]
         ;
+        margin-bottom: 50vh;
     }
 }
 
-.text-description {
+.card {
+  @apply
+    flex
+    flex-col
+    justify-center
+    w-full
+    min-h-[100vh]
+  ;
+
+  animation: content-animation 1s paused;
+  animation-delay: 0s;
+}
+
+.content-text {
   @apply
     text-2xl
     font-medium
-    max-w-[70rem]
-    min-w-[25rem]
+    max-w-[60rem]
+    place-self-center
   ;
-  animation: content-animation auto ease-in-out;
-  animation-timeline: --page-scroll;
 }
 
 @keyframes content-animation {
@@ -27,16 +39,10 @@
         opacity-[0%]
       ;
     }
-  
-    20% {
-      @apply
-        opacity-[0%]
-      ;
-    }
-  
+
     60% {
       @apply
-        opacity-[100%]
+        opacity-[0%]
       ;
     }
   
