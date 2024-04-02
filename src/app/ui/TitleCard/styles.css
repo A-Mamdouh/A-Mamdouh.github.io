@@ -89,6 +89,7 @@
         @apply
             flex
             flex-row
+            mx-[1vw]
         ;
         .icon {
             @apply
