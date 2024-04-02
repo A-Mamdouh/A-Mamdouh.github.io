@@ -2,53 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .buffer-div {
-        @apply
-            min-h-[50vh]
-        ;
-        margin-bottom: 50vh;
-    }
-}
-
-.card {
-  @apply
-    flex
-    flex-col
-    justify-center
-    w-full
-    min-h-[100vh]
-  ;
-
-  animation: content-animation 1s paused;
-  animation-delay: 0s;
-}
-
-.content-text {
-  @apply
-    text-2xl
-    font-medium
-    max-w-[60rem]
-    place-self-center
-  ;
-}
-
 @keyframes content-animation {
-    0% {
-      @apply
-        opacity-[0%]
-      ;
-    }
-
-    60% {
-      @apply
-        opacity-[0%]
-      ;
-    }
-  
-    100% {
-      @apply
-        opacity-[100%]
-      ;
-    }
+  0% {
+    @apply
+      opacity-[0%]
+    ;
   }
+
+  60% {
+    @apply
+      opacity-[0%]
+    ;
+  }
+
+  100% {
+    @apply
+      opacity-[100%]
+    ;
+  }
+}
+
+@layer components {
+
+  .content-container {
+    @apply
+      text-center
+      w-[60%]
+      h-[100vh]
+    ;
+  }
+
+  .card {
+    @apply
+      w-[100%]
+      min-h-[100vh]
+      flex
+      flex-col
+      justify-center
+    ;
+  
+    animation: content-animation 1s paused;
+    animation-delay: 0s;
+  }
+  
+  .content-text {
+    @apply
+      text-2xl
+      font-medium
+      max-w-[60rem]
+      place-self-center
+    ;
+  }
+
+}
+
+/* Mobile rules */
+
+@media screen and (max-width: 480px) {
+  .content-container {
+    @apply
+      text-center
+      w-[100vw]
+      h-[80%]
+    ;
+  }
+
+  .card {
+    @apply
+      w-[100vw]
+      h-[80%]
+      flex
+      flex-col
+      justify-center
+    ;
+    animation: content-animation 1s paused;
+    animation-delay: 0s;
+  }
+}

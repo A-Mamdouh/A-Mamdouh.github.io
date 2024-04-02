@@ -6,10 +6,7 @@ function Page () {
   return (
     <main className="main">
       <TitleCard/>
-      
-      <div className="content">
-          <Content/>
-      </div>
+      <Content/>
     </main>
   );
 }
