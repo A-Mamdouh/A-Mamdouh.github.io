@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {  
+  .about-me {
+    @apply
+      text-2xl
+      font-medium
+      max-w-[60rem]
+      place-self-center
+    ;
+  }
+
+}

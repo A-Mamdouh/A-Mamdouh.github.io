@@ -11,7 +11,7 @@ const SocialIcon = ({href, icon}: Readonly<{href: string, icon: string}>) => (
             <use href={icon}></use>
         </svg>
     </a>
-)
+);
 
 function TitleCard() {
     const {observeRef, animateRef} = useScrollAnimator({nFrames: 100});

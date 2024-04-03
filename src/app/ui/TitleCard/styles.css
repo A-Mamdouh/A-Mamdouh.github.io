@@ -34,10 +34,14 @@
             right-0
             w-full
             h-[70%]
+            min-h-[121px]
+            min-w-[120px]
         ;
-        --title-font-size: calc(3vw + 4vh + 2vmin);
+        /* --title-font-size: calc(3vw + 4vh + 2vmin); */
+        --title-font-size: calc(100% + 4vh + 2vmin);
         --subtitle-font-size: calc(0.7 * var(--title-font-size));
         display: grid;
+        contain: size;
         z-index: 1;
         grid-template-rows: repeat(2, 40%) 10%;
         animation: title-animation 1s paused;
@@ -56,7 +60,6 @@
 
     .text-title {
         font-size: var(--title-font-size);
-        
     }
 
     .text-subtitle {
@@ -80,7 +83,7 @@
             flex
             flex-row
             justify-center
-            mt-[1%]
+            pt-[1vh]
         ;
         grid-row: 3;
     }
@@ -89,8 +92,8 @@
         @apply
             flex
             flex-row
-            mx-[1vw]
         ;
+        margin-inline: calc(0.5vw);
         .icon {
             @apply
                 h-[100%]
@@ -131,6 +134,8 @@
         @apply
             top-[25%]
             h-[50%]
+            min-h-[121px]
+            min-w-[120px]
         ;
         --title-font-size: calc((3vw + 4vh + 2vmin));
         grid-template-rows: repeat(2, 40%) 20%;

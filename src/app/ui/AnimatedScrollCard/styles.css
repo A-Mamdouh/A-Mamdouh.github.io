@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fade in-out animation */
+@keyframes fade-in-out {
+    0% {
+      @apply
+        opacity-[0%]
+      ;
+    }
+  
+    60% {
+      @apply
+        opacity-[0%]
+      ;
+    }
+  
+    100% {
+      @apply
+        opacity-[100%]
+      ;
+    }
+  }
+
+@layer components {
+    .card {
+        @apply
+          w-[100%]
+          h-[100%]
+          flex
+          flex-col
+          justify-center
+        ;
+        animation: fade-in-out 1s paused;
+        animation-delay: 0s;
+    }
+}

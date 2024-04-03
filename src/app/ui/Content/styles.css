@@ -2,47 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes content-animation {
-  0% {
-    @apply
-      opacity-[0%]
-    ;
-  }
-
-  60% {
-    @apply
-      opacity-[0%]
-    ;
-  }
-
-  100% {
-    @apply
-      opacity-[100%]
-    ;
-  }
-}
-
 @layer components {
-
   .content-container {
     @apply
       text-center
       w-[60%]
       h-[100vh]
     ;
-  }
-
-  .card {
-    @apply
-      w-[100%]
-      min-h-[100vh]
-      flex
-      flex-col
-      justify-center
-    ;
-  
-    animation: content-animation 1s paused;
-    animation-delay: 0s;
   }
   
   .content-text {
@@ -62,20 +28,9 @@
   .content-container {
     @apply
       text-center
-      w-[100vw]
-      h-[80%]
+      w-[100dvw]
+      h-[80dvh]
+      mt-[20dvh]
     ;
-  }
-
-  .card {
-    @apply
-      w-[100vw]
-      h-[80%]
-      flex
-      flex-col
-      justify-center
-    ;
-    animation: content-animation 1s paused;
-    animation-delay: 0s;
   }
 }
