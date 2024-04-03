@@ -6,20 +6,10 @@
   .content-container {
     @apply
       text-center
-      w-[60%]
+      w-[60vw]
       h-[100vh]
     ;
   }
-  
-  .content-text {
-    @apply
-      text-2xl
-      font-medium
-      max-w-[60rem]
-      place-self-center
-    ;
-  }
-
 }
 
 /* Mobile rules */
@@ -28,9 +18,9 @@
   .content-container {
     @apply
       text-center
-      w-[100dvw]
-      h-[80dvh]
-      mt-[20dvh]
+      w-[100vw]
+      h-[80vh]
+      mt-[20vh]
     ;
   }
 }

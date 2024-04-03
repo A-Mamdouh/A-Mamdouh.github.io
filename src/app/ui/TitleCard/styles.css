@@ -37,13 +37,13 @@
             min-h-[121px]
             min-w-[120px]
         ;
-        /* --title-font-size: calc(3vw + 4vh + 2vmin); */
         --title-font-size: calc(100% + 4vh + 2vmin);
         --subtitle-font-size: calc(0.7 * var(--title-font-size));
+        --icon-height: calc(7vh);
         display: grid;
         contain: size;
         z-index: 1;
-        grid-template-rows: repeat(2, 40%) 10%;
+        grid-template-rows: 50% 40% 10%;
         animation: title-animation 1s paused;
     }
 
@@ -94,9 +94,11 @@
             flex-row
         ;
         margin-inline: calc(0.5vw);
+        height: var(--icon-height);
         .icon {
             @apply
                 h-[100%]
+                w-[auto]
             ;
             aspect-ratio: 1 / 1;
         }
@@ -109,22 +111,25 @@
 
     100% {
         @apply
-            top-[25%]
-            h-[50%]
+            top-[25dvh]
+            h-[50dvh]
         ;
-        --title-font-size: calc((3vw + 4vh + 2vmin));
+        --icon-height: 7vh;
+        --title-font-size: calc(100% + 4vh + 2vmin);
     }
 
     50% {
-        --title-font-size: calc(0.75 * (3vw + 4vh + 2vmin));
+        --title-font-size: calc(0.75 * (100% + 4vh + 2vmin));
+        --icon-height: 5.5vh;
     }
 
     0% {
         @apply
-            top-[0%]
-            h-[20%]
+            top-[0dvh]
+            h-[20dvh]
         ;
-        --title-font-size: calc(0.5 * (3vw + 4vh + 2vmin));
+        --icon-height: 3vh;
+        --title-font-size: calc(0.5 * (100% + 4vh + 2vmin));
     }
 }
 
@@ -137,7 +142,7 @@
             min-h-[121px]
             min-w-[120px]
         ;
-        --title-font-size: calc((3vw + 4vh + 2vmin));
+        --title-font-size: calc(100% + 4vh + 2vmin);
         grid-template-rows: repeat(2, 40%) 20%;
     }
 }
