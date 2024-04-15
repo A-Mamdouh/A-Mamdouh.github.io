@@ -16,8 +16,8 @@ function useScrollAnimator ({nFrames}: Readonly<{nFrames: number}>) : [Callback,
     const animatedRef = useRef<HTMLElement>();
 
     return [
-        (htmlRef) => {if(htmlRef !== null) animatedRef.current = htmlRef},
-        observeRef
+        observeRef,
+        (htmlRef) => {if(htmlRef !== null) animatedRef.current = htmlRef}
     ]
 }
 
