@@ -17,7 +17,7 @@ const WorkExperienceCard = ({title, children}:Readonly<{title: string, children:
 function WorkExperience() {
     
     return (
-        <AnimatedScrollCard className="flex flex-col items-center content-center p-10">
+        <AnimatedScrollCard id="experience" className="flex flex-col items-center content-center p-10">
             <p className="text-4xl flex mb-5 text-primary">Problem solver at heart</p>
             <div className="w-full h-full flex flex-col justify-center items-center">
                 <WorkExperienceCard title="Primetals Technologies">

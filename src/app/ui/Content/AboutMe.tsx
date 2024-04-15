@@ -3,7 +3,7 @@ import "./aboutme.css"
 
 function AboutMe () {
     return (
-        <AnimatedScrollCard>
+        <AnimatedScrollCard id="aboutme">
             <p className="about-me text-primary">
                 In 2014, I was curious about combinatorics and algorithms.
                 I started reading about combinatorics as well as learning Python by reading the documentation.

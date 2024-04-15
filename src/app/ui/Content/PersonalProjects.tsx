@@ -24,7 +24,7 @@ const ProjectCard = ({title, children, githubLink}:Readonly<{title: string, chil
 function PersonalProjects() {
     
     return (
-        <AnimatedScrollCard className="flex flex-col items-center content-center p-10">
+        <AnimatedScrollCard id="projects" className="flex flex-col items-center content-center p-10">
             <p className="text-4xl flex mb-5 text-primary">Personal passions</p>
             <div className="w-full h-full flex flex-col justify-center items-center">
                 <ProjectCard title="Eden" githubLink="https://github.com/a-mamdouh/Eden">
