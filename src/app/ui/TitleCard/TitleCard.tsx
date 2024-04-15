@@ -14,7 +14,7 @@ const SocialIcon = ({href, icon}: Readonly<{href: string, icon: string}>) => (
 );
 
 function TitleCard() {
-    const {observeRef, animateRef} = useScrollAnimator({nFrames: 100});
+    const [observeRef, animateRef] = useScrollAnimator({nFrames: 100});
     return (
         <>
             <div ref={observeRef} className="title-buffer"></div>
