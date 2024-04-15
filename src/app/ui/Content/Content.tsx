@@ -1,5 +1,7 @@
 "use client";
 import AboutMe from "./AboutMe";
+import PersonalProjects from "./PersonalProjects";
+import WorkExperience from "./WorkExperience"
 import "./styles.css"
 
 function Content () {
@@ -7,6 +9,8 @@ function Content () {
     return (
         <div className="content-container">
             <AboutMe />
+            <WorkExperience />
+            <PersonalProjects />
         </div>
     )
 }
