@@ -40,6 +40,10 @@
         --title-font-size: calc(100% + 4vh + 2vmin);
         --subtitle-font-size: calc(0.7 * var(--title-font-size));
         --icon-height: calc(7vh);
+        --color-start: color-mix(in srgb, var(--bg-secondary), transparent 60%);
+        --color-end: color-mix(in srgb, var(--bg-secondary), transparent 0%);
+        background: linear-gradient(0deg, var(--color-start), var(--color-end));
+
         display: grid;
         contain: size;
         z-index: 1;
