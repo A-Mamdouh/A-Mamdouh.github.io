@@ -116,11 +116,11 @@
             h-[50dvh]
         ;
         --icon-height: 7vh;
-        --title-font-size: calc(100% + 4vh + 2vmin);
+        --title-font-size: var(--title-font-size-base);
     }
 
     50% {
-        --title-font-size: calc(0.75 * (100% + 4vh + 2vmin));
+        --title-font-size: calc(var(--title-font-size-base) * 0.75);
         --icon-height: 5.5vh;
     }
 
@@ -130,11 +130,15 @@
             h-[20dvh]
         ;
         --icon-height: 3vh;
-        --title-font-size: calc(0.5 * (100% + 4vh + 2vmin));
+        --title-font-size: calc(var(--title-font-size-base) * 0.5);
     }
 }
 
 @media screen and (max-width: 480px) {
+    :root {
+        --title-font-size-base: calc(90% + 3vh + 1.5vmin);
+    }
+
     .title-container {
         animation-name: title-animation-mobile;
         @apply
@@ -143,7 +147,7 @@
             min-h-[121px]
             min-w-[120px]
         ;
-        --title-font-size: calc(100% + 4vh + 2vmin);
+        --title-font-size: var(--title-font-size-base);
         grid-template-rows: repeat(2, 40%) 20%;
         --color-start: color-mix(in srgb, var(--bg-secondary), transparent 60%);
         --color-end: color-mix(in srgb, var(--bg-secondary), transparent 0%);
