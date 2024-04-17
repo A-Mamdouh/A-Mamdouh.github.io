@@ -1,4 +1,4 @@
-import { Dispatch, MutableRefObject, SetStateAction, forwardRef, useEffect } from "react";
+import { useEffect } from "react";
 import AnimatedScrollCard from "../AnimatedScrollCard/AnimatedScrollCard";
 import "./aboutme.css"
 import useIntersectionObserver from "@/app/hooks/useIntersectionObserver";
@@ -9,7 +9,7 @@ function AboutMe ({visSetter}: {visSetter: VisDataSetter}) {
     useEffect(() => { visSetter(intersection); }, [intersection, visSetter]);
     return (
         <AnimatedScrollCard id="aboutme" reff={ref}>
-            <p className="about-me text-primary">
+            <p className="about-me text-primary big-text">
                 In 2014, I was curious about combinatorics and algorithms.
                 I started reading about combinatorics as well as learning Python by reading the documentation.
                 Today, I have a bachelor in computer science, I am experienced in most common programming domains.

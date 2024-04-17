@@ -2,11 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {  
+@layer components { 
   .about-me {
     @apply
-      text-2xl
-      font-medium
       max-w-[60rem]
       place-self-center
     ;
@@ -17,8 +15,6 @@
 
 @media screen and (max-width: 480px) {
   .about-me {
-    @apply
-      text-xl
-    ;
+
   }
 }

@@ -70,6 +70,18 @@ body {
   .bg-secondary {
     background: var(--bg-secondary);
   }
+
+  .big-text {
+    @apply text-2xl;
+  }
+
+  .bigger-text {
+    @apply text-4xl;
+  }
+
+  .title-text {
+    @apply text-6xl;
+  }
 }
 
 @layer components {
@@ -82,9 +94,20 @@ body {
       m-0
     ;
   }
-
-
 }
 
 
 
+@media screen and (max-width: 480px) {
+  .big-text {
+    @apply text-lg;
+  }
+  
+  .bigger-text {
+    @apply text-xl;
+  }
+
+  .title-text {
+    @apply text-3xl;
+  }
+}
