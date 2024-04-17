@@ -17,11 +17,14 @@ const SocialIcon = ({href, icon}: Readonly<{href: string, icon: string}>) => (
 type NavIconProps = {
     href: string,
     name: string,
-    intersection: number
+    intersection: number | undefined
 }
 
 const NavIcon = (props: NavIconProps) => {
-    const classes = "nav-item" + (props.intersection > 0.5? " nav-active" : "");
+    let classes = "nav-item";
+    if(props.intersection && props.intersection > 0.5) {
+        classes += " nav-active";
+    }
     return(
         <p className={classes}>
             <a href={props.href}>

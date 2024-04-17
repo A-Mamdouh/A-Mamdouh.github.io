@@ -2,10 +2,10 @@
 import { useEffect, useRef, useState } from "react"
 import { RefCallback } from "../types";
 
-function useIntersectionObserver ({slices}: Readonly<{slices: number}>) : [number, RefCallback] {
+function useIntersectionObserver ({slices}: Readonly<{slices: number}>) : [number|undefined, RefCallback] {
     const observedRef = useRef<HTMLElement>();
     const observerRef = useRef<IntersectionObserver>();
-    const [intersection, setIntersection] = useState<number>(0);
+    const [intersection, setIntersection] = useState<number | undefined>(undefined);
     const [_, setMemRef] = useState<HTMLElement | undefined>(undefined);
     useEffect(() => {
         // Create observer

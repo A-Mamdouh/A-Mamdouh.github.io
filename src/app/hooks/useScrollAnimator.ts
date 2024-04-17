@@ -1,12 +1,15 @@
 "use client";
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import useIntersectionObserver from "./useIntersectionObserver";
 import { RefCallback } from "../types";
 
-function useScrollAnimator ({nFrames}: Readonly<{nFrames: number}>) : [RefCallback, RefCallback, number] {
+function useScrollAnimator ({nFrames}: Readonly<{nFrames: number}>) : [RefCallback, RefCallback, number | undefined] {
     const [intersection, observeRef] = useIntersectionObserver({slices: nFrames});
+    const [loaded, setLoaded] = useState<boolean>(false);
+    useEffect(() => {setLoaded(true)}, []);
     useEffect(() => {
-        if(animatedRef.current) {
+        if(!loaded) return;
+        if(animatedRef.current && intersection !== undefined) {
             animatedRef.current.style.animationDelay = `${-intersection}s`;
         }
     }, [intersection]);
