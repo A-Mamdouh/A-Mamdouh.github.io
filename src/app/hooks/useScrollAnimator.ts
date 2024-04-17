@@ -1,12 +1,10 @@
 "use client";
 import { useEffect, useRef } from "react"
 import useIntersectionObserver from "./useIntersectionObserver";
+import { RefCallback } from "../types";
 
-type Callback = (ref: (HTMLElement | null)) => void;
-
-function useScrollAnimator ({nFrames}: Readonly<{nFrames: number}>) : [Callback, Callback] {
+function useScrollAnimator ({nFrames}: Readonly<{nFrames: number}>) : [RefCallback, RefCallback, number] {
     const [intersection, observeRef] = useIntersectionObserver({slices: nFrames});
-    
     useEffect(() => {
         if(animatedRef.current) {
             animatedRef.current.style.animationDelay = `${-intersection}s`;
@@ -17,7 +15,8 @@ function useScrollAnimator ({nFrames}: Readonly<{nFrames: number}>) : [Callback,
 
     return [
         observeRef,
-        (htmlRef) => {if(htmlRef !== null) animatedRef.current = htmlRef}
+        (htmlRef) => {if(htmlRef !== null) animatedRef.current = htmlRef},
+        intersection
     ]
 }
 

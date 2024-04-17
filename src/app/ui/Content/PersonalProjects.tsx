@@ -1,6 +1,8 @@
+import useIntersectionObserver from "@/app/hooks/useIntersectionObserver";
 import Icon from "../Icon";
 import "./personalProjects.css";
 import AnimatedScrollCard from "@/app/ui/AnimatedScrollCard/AnimatedScrollCard";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
 const ProjectCard = ({title, children, githubLink}:Readonly<{title: string, children: React.ReactNode, githubLink: string}>) => {
     return (
@@ -21,10 +23,11 @@ const ProjectCard = ({title, children, githubLink}:Readonly<{title: string, chil
 };
 
 
-function PersonalProjects() {
-    
+function PersonalProjects({visSetter}: {visSetter: Dispatch<SetStateAction<number>>}) {
+    const [intersection, ref] = useIntersectionObserver({slices: 100});
+    useEffect(() => { visSetter(intersection); }, [intersection]);
     return (
-        <AnimatedScrollCard id="projects" className="flex flex-col items-center content-center p-10">
+        <AnimatedScrollCard reff={ref} id="projects" className="flex flex-col items-center content-center p-10">
             <p className="text-4xl flex mb-5 text-primary">Personal passions</p>
             <div className="w-full h-full flex flex-col justify-center items-center">
                 <ProjectCard title="Eden" githubLink="https://github.com/a-mamdouh/Eden">

@@ -1,9 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react"
+import { RefCallback } from "../types";
 
-type Callback = (ref: (HTMLElement | null)) => void;
-
-function useIntersectionObserver ({slices}: Readonly<{slices: number}>) : [number, Callback] {
+function useIntersectionObserver ({slices}: Readonly<{slices: number}>) : [number, RefCallback] {
     const observedRef = useRef<HTMLElement>();
     const observerRef = useRef<IntersectionObserver>();
     const [intersection, setIntersection] = useState<number>(0);

@@ -1,16 +1,17 @@
 "use client";
+import { VisDataSetter } from "@/app/types";
 import AboutMe from "./AboutMe";
 import PersonalProjects from "./PersonalProjects";
 import WorkExperience from "./WorkExperience"
 import "./styles.css"
 
-function Content () {
+function Content ({visDataSetter}:{visDataSetter: VisDataSetter}) {
 
     return (
         <div className="content-container">
-            <AboutMe />
-            <WorkExperience />
-            <PersonalProjects />
+            <AboutMe visSetter={visDataSetter.abt}/>
+            <WorkExperience visSetter={visDataSetter.exp} />
+            <PersonalProjects visSetter={visDataSetter.project} />
         </div>
     )
 }

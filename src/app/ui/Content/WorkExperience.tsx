@@ -1,9 +1,11 @@
+import useIntersectionObserver from "@/app/hooks/useIntersectionObserver";
 import "./workExperience.css";
 import AnimatedScrollCard from "@/app/ui/AnimatedScrollCard/AnimatedScrollCard";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
 const WorkExperienceCard = ({title, children}:Readonly<{title: string, children: React.ReactNode}>) => {
     return (
-        <div className="w-full border-solid border border-[var(--primary)] max-w-[40rem] p-5 m-auto">
+        <div className="w-full border-solid border border-[var(--primary)] max-w-[40rem] p-5 mb-2 m-auto">
             <p className="text-2xl text-[var(--secondary)]">{title}</p>
             <p>
                 {children}
@@ -14,10 +16,11 @@ const WorkExperienceCard = ({title, children}:Readonly<{title: string, children:
 };
 
 
-function WorkExperience() {
-    
+function WorkExperience({visSetter}: {visSetter: Dispatch<SetStateAction<number>>}) {
+    const [intersection, ref] = useIntersectionObserver({slices: 100});
+    useEffect(() => { visSetter(intersection); }, [intersection]);
     return (
-        <AnimatedScrollCard id="experience" className="flex flex-col items-center content-center p-10">
+        <AnimatedScrollCard reff={ref} id="experience" className="flex flex-col items-center content-center p-10">
             <p className="text-4xl flex mb-5 text-primary">Problem solver at heart</p>
             <div className="w-full h-full flex flex-col justify-center items-center">
                 <WorkExperienceCard title="Primetals Technologies">
