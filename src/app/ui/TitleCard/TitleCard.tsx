@@ -1,10 +1,10 @@
 "use client";
-import {Big_Shoulders_Inline_Display} from "next/font/google";
+import {Big_Shoulders_Display} from "next/font/google";
 import "./styles.css";
 import useScrollAnimator from "@/app/hooks/useScrollAnimator";
 import { VisData } from "@/app/types";
 
-const bsid = Big_Shoulders_Inline_Display({ subsets: ["latin"] });
+const titleFont = Big_Shoulders_Display({ subsets: ["latin"] });
 
 const SocialIcon = ({href, icon}: Readonly<{href: string, icon: string}>) => (
     <a href={href} className="social">
@@ -59,8 +59,8 @@ function TitleCard({visData}:{visData: VisData}) {
             <div ref={observeRef} className="title-buffer"></div>
             <div ref={animateRef} className="title-container">
                 <div className="title-text-container">
-                    <p className={`${bsid.className} text-title`}>Ahmed Mamdouh</p>
-                    <p className={`${bsid.className} text-subtitle`}>Computer Scientist</p>
+                    <p className={`${titleFont.className} text-title`}>Ahmed Mamdouh</p>
+                    <p className={`${titleFont.className} text-subtitle`}>Computer Scientist</p>
                 </div>
                 <div>
                     <svg className="title-icon">
