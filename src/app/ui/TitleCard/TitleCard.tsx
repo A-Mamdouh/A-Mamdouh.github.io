@@ -3,7 +3,6 @@ import {Big_Shoulders_Inline_Display} from "next/font/google";
 import "./styles.css";
 import useScrollAnimator from "@/app/hooks/useScrollAnimator";
 import { VisData } from "@/app/types";
-import { useEffect, useState } from "react";
 
 const bsid = Big_Shoulders_Inline_Display({ subsets: ["latin"] });
 
