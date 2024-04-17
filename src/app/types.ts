@@ -2,16 +2,20 @@
 
 import { Dispatch, SetStateAction } from "react";
 
-export type VisDataSetter = {
-    abt: Dispatch<SetStateAction<number>>,
-    exp: Dispatch<SetStateAction<number>>,
-    project: Dispatch<SetStateAction<number>>
+export type IntersectionType = number | undefined;
+
+export type VisDataSetter = Dispatch<SetStateAction<IntersectionType>>;
+
+export type VisDataSetters = {
+    abt: VisDataSetter,
+    exp: VisDataSetter,
+    project: VisDataSetter
 };
 
 export type VisData = {
-    abt: number,
-    exp: number,
-    project: number
+    abt: IntersectionType,
+    exp: IntersectionType,
+    project: IntersectionType
 };
 
 export type RefCallback = (ref: (HTMLElement | null)) => void;

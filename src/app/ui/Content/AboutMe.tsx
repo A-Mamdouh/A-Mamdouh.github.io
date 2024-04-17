@@ -2,10 +2,11 @@ import { Dispatch, MutableRefObject, SetStateAction, forwardRef, useEffect } fro
 import AnimatedScrollCard from "../AnimatedScrollCard/AnimatedScrollCard";
 import "./aboutme.css"
 import useIntersectionObserver from "@/app/hooks/useIntersectionObserver";
+import { VisDataSetter } from "@/app/types";
 
-function AboutMe ({visSetter}: {visSetter: Dispatch<SetStateAction<number>>}) {
+function AboutMe ({visSetter}: {visSetter: VisDataSetter}) {
     const [intersection, ref] = useIntersectionObserver({slices: 100});
-    useEffect(() => { visSetter(intersection); }, [intersection]);
+    useEffect(() => { visSetter(intersection); }, [intersection, visSetter]);
     return (
         <AnimatedScrollCard id="aboutme" reff={ref}>
             <p className="about-me text-primary">

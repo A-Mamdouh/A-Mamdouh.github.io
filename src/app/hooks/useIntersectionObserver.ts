@@ -29,7 +29,7 @@ function useIntersectionObserver ({slices}: Readonly<{slices: number}>) : [numbe
         return () => {
             observerRef.current && observedRef.current && observerRef.current.unobserve(observedRef.current);
         }
-    }, []);
+    }, [slices]);
 
     useEffect(
         () => {

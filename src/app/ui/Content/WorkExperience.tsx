@@ -2,6 +2,7 @@ import useIntersectionObserver from "@/app/hooks/useIntersectionObserver";
 import "./workExperience.css";
 import AnimatedScrollCard from "@/app/ui/AnimatedScrollCard/AnimatedScrollCard";
 import { Dispatch, SetStateAction, useEffect } from "react";
+import { VisDataSetter } from "@/app/types";
 
 const WorkExperienceCard = ({title, children}:Readonly<{title: string, children: React.ReactNode}>) => {
     return (
@@ -16,9 +17,9 @@ const WorkExperienceCard = ({title, children}:Readonly<{title: string, children:
 };
 
 
-function WorkExperience({visSetter}: {visSetter: Dispatch<SetStateAction<number>>}) {
+function WorkExperience({visSetter}: {visSetter: VisDataSetter}) {
     const [intersection, ref] = useIntersectionObserver({slices: 100});
-    useEffect(() => { visSetter(intersection); }, [intersection]);
+    useEffect(() => { visSetter(intersection); }, [intersection, visSetter]);
     return (
         <AnimatedScrollCard reff={ref} id="experience" className="flex flex-col items-center content-center p-10">
             <p className="text-4xl flex mb-5 text-primary">Problem solver at heart</p>

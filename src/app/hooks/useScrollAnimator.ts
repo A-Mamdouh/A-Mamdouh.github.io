@@ -12,7 +12,7 @@ function useScrollAnimator ({nFrames}: Readonly<{nFrames: number}>) : [RefCallba
         if(animatedRef.current && intersection !== undefined) {
             animatedRef.current.style.animationDelay = `${-intersection}s`;
         }
-    }, [intersection]);
+    }, [intersection, loaded]);
 
     const animatedRef = useRef<HTMLElement>();
 

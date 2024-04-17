@@ -3,6 +3,7 @@ import Icon from "../Icon";
 import "./personalProjects.css";
 import AnimatedScrollCard from "@/app/ui/AnimatedScrollCard/AnimatedScrollCard";
 import { Dispatch, SetStateAction, useEffect } from "react";
+import { VisDataSetter } from "@/app/types";
 
 const ProjectCard = ({title, children, githubLink}:Readonly<{title: string, children: React.ReactNode, githubLink: string}>) => {
     return (
@@ -23,9 +24,9 @@ const ProjectCard = ({title, children, githubLink}:Readonly<{title: string, chil
 };
 
 
-function PersonalProjects({visSetter}: {visSetter: Dispatch<SetStateAction<number>>}) {
+function PersonalProjects({visSetter}: {visSetter: VisDataSetter}) {
     const [intersection, ref] = useIntersectionObserver({slices: 100});
-    useEffect(() => { visSetter(intersection); }, [intersection]);
+    useEffect(() => { visSetter(intersection); }, [intersection, visSetter]);
     return (
         <AnimatedScrollCard reff={ref} id="projects" className="flex flex-col items-center content-center p-10">
             <p className="text-4xl flex mb-5 text-primary">Personal passions</p>
