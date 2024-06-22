@@ -9,10 +9,11 @@ function Page () {
 
   const [abt, setAbt] = useState<number|undefined>(undefined);
   const [exp, setExp] = useState<number|undefined>(undefined);
+  const [currentProject, setCurrentProject] = useState<number | undefined>(undefined);
   const [project, setProject] = useState<number|undefined>(undefined);
 
-  const visData: VisData = { abt, exp, project };
-  const visDataSetter: VisDataSetters = { abt: setAbt, exp: setExp, project: setProject };
+  const visData: VisData = { abt, exp, currentProject, project };
+  const visDataSetter: VisDataSetters = { abt: setAbt, exp: setExp, project: setProject, currentProject: setCurrentProject };
 
   return (
     <main className="main">

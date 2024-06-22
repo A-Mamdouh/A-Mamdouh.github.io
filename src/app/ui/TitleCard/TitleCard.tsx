@@ -21,13 +21,13 @@ type NavIconProps = {
 }
 
 const NavIcon = (props: NavIconProps) => {
-    let classes = "nav-item";
+    let classes = "nav-item-text";
     if(props.intersection && props.intersection > 0.5) {
         classes += " nav-active";
     }
     return(
-        <p className={classes}>
-            <a href={props.href}>
+        <p className="nav-item">
+            <a className={classes} href={props.href}>
                 {props.name}
                 </a>
             </p>
@@ -46,6 +46,11 @@ function TitleCard({visData}:{visData: VisData}) {
             href: "#experience",
             name: "Experience",
             intersection: visData.exp,
+        },
+        {
+            href: "#current-projects",
+            name: "Current Projects",
+            intersection: visData.currentProject,
         },
         {
             href: "#projects",
