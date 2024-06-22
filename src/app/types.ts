@@ -9,12 +9,14 @@ export type VisDataSetter = Dispatch<SetStateAction<IntersectionType>>;
 export type VisDataSetters = {
     abt: VisDataSetter,
     exp: VisDataSetter,
+    currentProject: VisDataSetter
     project: VisDataSetter
 };
 
 export type VisData = {
     abt: IntersectionType,
     exp: IntersectionType,
+    currentProject: IntersectionType
     project: IntersectionType
 };
 

@@ -74,6 +74,10 @@
     }
 
     .nav-item {
+        @apply p-2;
+        }
+        
+        .nav-item-text {
         @apply p-2 text-[var(--primary)] text-xl font-semibold opacity-[40%] hover:opacity-[100%];
     }
 

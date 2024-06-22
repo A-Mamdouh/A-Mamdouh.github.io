@@ -43,7 +43,6 @@
 }
 
 body {
-  user-select: none;
   color: var(--primary);
   background: var(--bg-secondary);
 }
