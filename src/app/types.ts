@@ -20,4 +20,10 @@ export type VisData = {
     project: IntersectionType
 };
 
+export enum Theme {
+    light,
+    dark,
+    system
+};
+
 export type RefCallback = (ref: (HTMLElement | null)) => void;

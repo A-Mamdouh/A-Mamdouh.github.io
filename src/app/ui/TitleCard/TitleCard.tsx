@@ -2,7 +2,8 @@
 import {Big_Shoulders_Display} from "next/font/google";
 import "./styles.css";
 import useScrollAnimator from "@/app/hooks/useScrollAnimator";
-import { VisData } from "@/app/types";
+import { Theme, VisData } from "@/app/types";
+import useTheme from "@/app/hooks/useTheme";
 
 const titleFont = Big_Shoulders_Display({ subsets: ["latin"] });
 
@@ -13,6 +14,27 @@ const SocialIcon = ({href, icon}: Readonly<{href: string, icon: string}>) => (
         </svg>
     </a>
 );
+
+const ThemeButton = () => {
+    const [theme, setTheme] = useTheme();
+    let iconNames: { [id: number]: string; } = {};
+    iconNames[Theme.dark] = "theme-light.svg";
+    iconNames[Theme.light] = "theme-system.svg";
+    iconNames[Theme.system] = "theme-dark.svg";
+    return (
+        <div className="fixed z-20 w-[3vw] top-1 right-1 fill-[var(--bg-secondary)]">
+            <svg className="w-full h-full" onClick={() => {
+                switch (theme) {
+                    case Theme.dark: setTheme(Theme.light); break;
+                    case Theme.light: setTheme(Theme.system); break;
+                    case Theme.system: setTheme(Theme.dark); break;
+                }
+            }}>
+                <use href={`/icons/${iconNames[theme]}#icon`}></use>
+            </svg>
+        </div>
+    );
+}
 
 type NavIconProps = {
     href: string,
@@ -34,7 +56,7 @@ const NavIcon = (props: NavIconProps) => {
     )
 };
 
-function TitleCard({visData}:{visData: VisData}) {
+function TitleCard({ visData }: { visData: VisData }) {
     const [observeRef, animateRef, intersection] = useScrollAnimator({nFrames: 100});
     const navInfo: NavIconProps[] = [
         {
@@ -61,6 +83,7 @@ function TitleCard({visData}:{visData: VisData}) {
 
     return (
         <>
+            <ThemeButton />
             <div ref={observeRef} className="title-buffer"></div>
             <div ref={animateRef} className="title-container">
                 <div className="title-text-container">

@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { VisData, VisDataSetters } from "./types";
+import { useEffect, useState } from "react";
+import { Theme, VisData, VisDataSetters } from "./types";
 import Content from "./ui/Content/Content";
 import TitleCard from "./ui/TitleCard/TitleCard";
 
