@@ -45,7 +45,7 @@
         display: grid;
         contain: size;
         z-index: 1;
-        grid-template-rows: 4fr 3fr 1fr 2fr;
+        grid-template-rows: 3fr 3fr 1fr 3fr;
         animation: title-animation 1s paused;
         animation-delay: -1s;
     }
@@ -58,6 +58,8 @@
             content-center
             text-center
             box-border
+            flex-col
+            flex
         ;
         grid-row: 1;
     }
