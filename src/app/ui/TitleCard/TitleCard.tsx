@@ -4,6 +4,7 @@ import "./styles.css";
 import useScrollAnimator from "@/app/hooks/useScrollAnimator";
 import { Theme, VisData } from "@/app/types";
 import useTheme from "@/app/hooks/useTheme";
+import { Tooltip } from "@nextui-org/react";
 
 const titleFont = Big_Shoulders_Display({ subsets: ["latin"] });
 
@@ -17,20 +18,22 @@ const SocialIcon = ({href, icon}: Readonly<{href: string, icon: string}>) => (
 
 const ThemeButton = () => {
     const [theme, setTheme] = useTheme();
-    let iconNames: { [id: number]: string; } = {};
-    iconNames[Theme.dark] = "theme-light.svg";
-    iconNames[Theme.light] = "theme-system.svg";
-    iconNames[Theme.system] = "theme-dark.svg";
+    const themeNames: { [id: number]: string; } = {
+        [Theme.dark]: "dark",
+        [Theme.light]: "light",
+        [Theme.system]: "system",
+    };
+    const themeCycle: {[id: number]: Theme} = {
+        [Theme.dark]: Theme.light,
+        [Theme.light]: Theme.system,
+        [Theme.system]: Theme.dark,
+    }
     return (
-        <div className="fixed z-20 w-[3vw] top-1 right-1 fill-[var(--bg-secondary)]">
-            <svg className="w-full h-full" onClick={() => {
-                switch (theme) {
-                    case Theme.dark: setTheme(Theme.light); break;
-                    case Theme.light: setTheme(Theme.system); break;
-                    case Theme.system: setTheme(Theme.dark); break;
-                }
-            }}>
-                <use href={`/icons/${iconNames[theme]}#icon`}></use>
+        <div className="fixed z-20 h-[50px] w-[50px] top-2 right-2 fill-[var(--bg-secondary)]">
+            <svg className="w-full h-full" onClick={() => setTheme(themeCycle[theme])}>
+                <Tooltip content={`${themeNames[theme]} theme`}>
+                <use href={`/icons/theme-${themeNames[theme]}.svg#icon`}></use>
+                </Tooltip>
             </svg>
         </div>
     );
@@ -88,7 +91,7 @@ function TitleCard({ visData }: { visData: VisData }) {
             <div ref={animateRef} className="title-container">
                 <div className="title-text-container">
                     <p className={`${titleFont.className} text-title`}>Ahmed Mamdouh</p>
-                    <p className={`${titleFont.className} text-subtitle`}>Computer Scientist</p>
+                    <p className={`${titleFont.className} text-subtitle`}>Software Developer</p>
                 </div>
                 <div>
                     <svg className="title-icon">

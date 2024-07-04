@@ -5,6 +5,7 @@ import { Theme } from "../types";
 
 
 function useTheme(initialTheme: Theme = Theme.system): [Theme, Dispatch<Theme>] {
+    // TODO: Switch to context/consumer to support multiple users
     const toggleTheme = (themeName: string, value: boolean) => {
         if (value) {
             if (!document.documentElement.classList.contains(themeName))
