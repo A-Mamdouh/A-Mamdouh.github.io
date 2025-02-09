@@ -10,10 +10,11 @@ function AboutMe ({visSetter}: {visSetter: VisDataSetter}) {
     return (
         <AnimatedScrollCard id="aboutme" reff={ref}>
             <p className="about-me text-primary big-text">
-                In 2014, I was curious about combinatorics and algorithms.
-                I started reading about combinatorics as well as learning Python by reading the documentation.
-                Today, I have a bachelor in computer science and am experienced in a variety of programming domains.
-                I am also attending the artificial intelligence master at Friedrich-Alexander-Universität, Erlangen
+            My journey into programming began in 2014 with a deep curiosity about combinatorics and algorithms.
+            I started by exploring combinatorics while teaching myself Python through its documentation.
+            Over the years, I earned a bachelor's degree in computer science and gained experience across various programming domains.
+            I have since completed my master's in artificial intelligence at Friedrich-Alexander-Universität Erlangen and
+            now work as an ABAP developer at SAP Fioneer, where I apply my expertise to enterprise software solutions.
             </p>
         </AnimatedScrollCard>
     );
