@@ -8,6 +8,7 @@ import {Tooltip} from "@nextui-org/react";
 import {TiSocialLinkedin as LinkedinIcon, TiSocialGithub as GithubIcon, TiMail as EmailIcon} from 'react-icons/ti'
 import React from "react";
 import {TbMoon as DarkModeIcon, TbSun as LightModeIcon, TbSunMoon as SystemIcon} from "react-icons/tb";
+import {IconType} from "react-icons";
 
 const titleFont = Big_Shoulders_Display({subsets: ["latin"]});
 
@@ -37,7 +38,7 @@ const ThemeButton = () => {
         [Theme.light]: Theme.system,
         [Theme.system]: Theme.dark,
     };
-    const themeIcon: { [id: number]: React.Component; } = {
+    const themeIcon: { [id: number]: IconType; } = {
         [Theme.dark]: DarkModeIcon,
         [Theme.light]: LightModeIcon,
         [Theme.system]: SystemIcon,
