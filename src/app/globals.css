@@ -9,8 +9,11 @@
     fill-[--primary]
   ;
   box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
+  svg {
+    stroke-width: 0.5;
+  }
 }
 
 :root {
@@ -108,5 +111,26 @@ body {
 
   .title-text {
     @apply text-3xl;
+  }
+}
+
+.icon-small {
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+.icon-medium {
+  svg {
+    width: 3em;
+    height: 3em;
+  }
+}
+
+.icon-large {
+  svg {
+    width: 6em;
+    height: 6em;
   }
 }

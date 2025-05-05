@@ -1,9 +1,9 @@
 import useIntersectionObserver from "@/app/hooks/useIntersectionObserver";
-import Icon from "../Icon";
 import "./projects.css";
 import AnimatedScrollCard from "@/app/ui/AnimatedScrollCard/AnimatedScrollCard";
 import { useEffect } from "react";
 import { VisDataSetter } from "@/app/types";
+import {TiSocialGithub} from "react-icons/ti";
 
 type ProjectCardDetails = {
     title: string,
@@ -19,8 +19,8 @@ const ProjectCard = ({ title, children, github, tags }: Readonly<ProjectCardDeta
             <p className="text-primary normal-text m-auto"> {children} </p>
             <div className="w-full flex flex-row justify-center items-center p-2">
                 <span className="italic text-sm px-2 grow">{tags.join(" · ")}</span>
-                <a href={github} className="mr-2">
-                    <Icon href="/icons/github.svg#icon" className="h-[35px] w-[35px] asepct-[1/1]" />
+                <a href={github} className="mr-2 icon-medium">
+                    <TiSocialGithub />
                 </a>
 
             </div>

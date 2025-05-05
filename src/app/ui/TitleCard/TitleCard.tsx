@@ -2,17 +2,26 @@
 import {Big_Shoulders_Display} from "next/font/google";
 import "./styles.css";
 import useScrollAnimator from "@/app/hooks/useScrollAnimator";
-import { Theme, VisData } from "@/app/types";
+import {Theme, VisData} from "@/app/types";
 import useTheme from "@/app/hooks/useTheme";
-import { Tooltip } from "@nextui-org/react";
+import {Tooltip} from "@nextui-org/react";
+import {TiSocialLinkedin as LinkedinIcon, TiSocialGithub as GithubIcon, TiMail as EmailIcon} from 'react-icons/ti'
+import React from "react";
+import {TbMoon as DarkModeIcon, TbSun as LightModeIcon, TbSunMoon as SystemIcon} from "react-icons/tb";
 
-const titleFont = Big_Shoulders_Display({ subsets: ["latin"] });
+const titleFont = Big_Shoulders_Display({subsets: ["latin"]});
 
-const SocialIcon = ({href, icon}: Readonly<{href: string, icon: string}>) => (
+const SocialIcon = ({href, Icon}: Readonly<{ href: string, Icon: string | React.ComponentType }>) => (
+
     <a href={href} className="social">
-        <svg className="icon">
-            <use href={icon}></use>
-        </svg>
+        {typeof Icon === "string"
+            ?
+            <svg className="icon">
+                <use href={Icon}></use>
+            </svg>
+            :
+            <Icon/>
+        }
     </a>
 );
 
@@ -23,19 +32,23 @@ const ThemeButton = () => {
         [Theme.light]: "light",
         [Theme.system]: "system",
     };
-    const themeCycle: {[id: number]: Theme} = {
+    const themeCycle: { [id: number]: Theme } = {
         [Theme.dark]: Theme.light,
         [Theme.light]: Theme.system,
         [Theme.system]: Theme.dark,
-    }
+    };
+    const themeIcon: { [id: number]: React.Component; } = {
+        [Theme.dark]: DarkModeIcon,
+        [Theme.light]: LightModeIcon,
+        [Theme.system]: SystemIcon,
+    };
+    const ThemeIcon = themeIcon[theme];
     return (
-        <div className="fixed z-20 h-[50px] w-[50px] top-2 right-2 fill-[var(--bg-secondary)]">
-            <svg className="w-full h-full" onClick={() => setTheme(themeCycle[theme])}>
-                <Tooltip content={`${themeNames[theme]} theme`}>
-                <use href={`/icons/theme-${themeNames[theme]}.svg#icon`}></use>
-                </Tooltip>
-            </svg>
-        </div>
+        <Tooltip content={`${themeNames[theme]} theme`}>
+            <div className="fixed z-20 top-2 right-2 icon-medium">
+                <ThemeIcon onClick={() => setTheme(themeCycle[theme])}/>
+            </div>
+        </Tooltip>
     );
 }
 
@@ -47,19 +60,19 @@ type NavIconProps = {
 
 const NavIcon = (props: NavIconProps) => {
     let classes = "nav-item-text";
-    if(props.intersection && props.intersection > 0.5) {
+    if (props.intersection && props.intersection > 0.5) {
         classes += " nav-active";
     }
-    return(
+    return (
         <p className="nav-item">
             <a className={classes} href={props.href}>
                 {props.name}
-                </a>
-            </p>
+            </a>
+        </p>
     )
 };
 
-function TitleCard({ visData }: { visData: VisData }) {
+function TitleCard({visData}: { visData: VisData }) {
     const [observeRef, animateRef, intersection] = useScrollAnimator({nFrames: 100});
     const navInfo: NavIconProps[] = [
         {
@@ -86,7 +99,7 @@ function TitleCard({ visData }: { visData: VisData }) {
 
     return (
         <>
-            <ThemeButton />
+            <ThemeButton/>
             <div ref={observeRef} className="title-buffer"></div>
             <div ref={animateRef} className="title-container">
                 <div className="title-text-container">
@@ -98,9 +111,10 @@ function TitleCard({ visData }: { visData: VisData }) {
                         <use href="/icons/profile.svg#icon"></use>
                     </svg>
                 </div>
-                <div className="title-social-container">
-                    <SocialIcon href="https://linkedin.com/in/a-mamdouh99/" icon="/icons/linkedin.svg#icon" />
-                    <SocialIcon href="https://github.com/a-mamdouh/" icon="/icons/github.svg#icon" />
+                <div className="title-social-container icon-large">
+                    <SocialIcon href="https://linkedin.com/in/a-mamdouh99/" Icon={LinkedinIcon}/>
+                    <SocialIcon href="https://github.com/a-mamdouh/" Icon={GithubIcon}/>
+                    <SocialIcon href="mailto:work@a-mamdouh.com" Icon={EmailIcon}/>
                 </div>
                 <div className="nav-container">
                     {
