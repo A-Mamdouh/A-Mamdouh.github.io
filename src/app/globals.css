@@ -17,6 +17,16 @@ svg {
   stroke-width: 0.5;
 }
 
+a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--secondary);
+}
+
 :root {
   --primary: #222831;
   --secondary: rgb(182, 103, 24);
