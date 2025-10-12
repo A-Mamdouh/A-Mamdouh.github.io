@@ -3,7 +3,7 @@ import "./currentProjects.css";
 import AnimatedScrollCard from "@/app/ui/AnimatedScrollCard/AnimatedScrollCard";
 import { useEffect } from "react";
 import { VisDataSetter } from "@/app/types";
-import {TiSocialGithub} from "react-icons/ti";
+import {TbBrandGithub} from "react-icons/tb";
 
 const ProjectCard = ({ title, children, githubLink }: Readonly<{ title: string, children: React.ReactNode, githubLink: string }>) => {
     return (
@@ -13,8 +13,8 @@ const ProjectCard = ({ title, children, githubLink }: Readonly<{ title: string, 
             </div>
             <p className="text-primary normal-text"> {children} </p>
             <div className="w-full flex flex-row justify-end p-2 icon-medium">
-                <a href={githubLink}>
-                    <TiSocialGithub />
+                <a href={githubLink} aria-label={`${title} on GitHub`}>
+                    <TbBrandGithub className="outline-icon"/>
                 </a>
             </div>
         </div>

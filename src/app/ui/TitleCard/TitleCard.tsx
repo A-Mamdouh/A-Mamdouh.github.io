@@ -5,24 +5,22 @@ import useScrollAnimator from "@/app/hooks/useScrollAnimator";
 import {Theme, VisData} from "@/app/types";
 import useTheme from "@/app/hooks/useTheme";
 import {Tooltip} from "@nextui-org/react";
-import {TiSocialLinkedin as LinkedinIcon, TiSocialGithub as GithubIcon, TiMail as EmailIcon} from 'react-icons/ti'
 import React from "react";
-import {TbMoon as DarkModeIcon, TbSun as LightModeIcon, TbSunMoon as SystemIcon} from "react-icons/tb";
+import {
+    TbBrandGithub as GithubIcon,
+    TbBrandLinkedin as LinkedinIcon,
+    TbMail as EmailIcon,
+    TbMoon as DarkModeIcon,
+    TbSun as LightModeIcon,
+    TbSunMoon as SystemIcon,
+} from "react-icons/tb";
 import {IconType} from "react-icons";
 
 const titleFont = Big_Shoulders_Display({subsets: ["latin"]});
 
-const SocialIcon = ({href, Icon}: Readonly<{ href: string, Icon: string | React.ComponentType }>) => (
-
-    <a href={href} className="social">
-        {typeof Icon === "string"
-            ?
-            <svg className="icon">
-                <use href={Icon}></use>
-            </svg>
-            :
-            <Icon/>
-        }
+const SocialIcon = ({href, Icon, label}: Readonly<{ href: string, Icon: IconType, label: string }>) => (
+    <a href={href} className="social" aria-label={label}>
+        <Icon className="icon outline-icon"/>
     </a>
 );
 
@@ -47,7 +45,7 @@ const ThemeButton = () => {
     return (
         <Tooltip content={`${themeNames[theme]} theme`}>
             <div className="fixed z-20 top-2 right-2 icon-medium">
-                <ThemeIcon onClick={() => setTheme(themeCycle[theme])}/>
+                <ThemeIcon onClick={() => setTheme(themeCycle[theme])} className="outline-icon"/>
             </div>
         </Tooltip>
     );
@@ -113,9 +111,9 @@ function TitleCard({visData}: { visData: VisData }) {
                     </svg>
                 </div>
                 <div className="title-social-container icon-large">
-                    <SocialIcon href="https://linkedin.com/in/a-mamdouh99/" Icon={LinkedinIcon}/>
-                    <SocialIcon href="https://github.com/a-mamdouh/" Icon={GithubIcon}/>
-                    <SocialIcon href="mailto:work@a-mamdouh.com" Icon={EmailIcon}/>
+                    <SocialIcon href="https://linkedin.com/in/a-mamdouh99/" Icon={LinkedinIcon} label="LinkedIn profile"/>
+                    <SocialIcon href="https://github.com/a-mamdouh/" Icon={GithubIcon} label="GitHub profile"/>
+                    <SocialIcon href="mailto:work@a-mamdouh.com" Icon={EmailIcon} label="Email Ahmed"/>
                 </div>
                 <div className="nav-container">
                     {

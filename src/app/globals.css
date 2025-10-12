@@ -6,14 +6,15 @@
   @apply
     p-0
     m-0
-    fill-[--primary]
   ;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  svg {
-    stroke-width: 0.5;
-  }
+}
+
+svg {
+  fill: var(--primary);
+  stroke-width: 0.5;
 }
 
 :root {
@@ -133,4 +134,11 @@ body {
     width: 6em;
     height: 6em;
   }
+}
+
+.outline-icon,
+.outline-icon * {
+  fill: none !important;
+  stroke: currentColor;
+  stroke-width: 1.5;
 }
