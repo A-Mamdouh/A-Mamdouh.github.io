@@ -1,42 +1,31 @@
 "use client";
-import useScrollAnimator from "@/app/hooks/useScrollAnimator";
 import { PropsWithChildren, ReactNode } from "react";
+import useReveal from "@/app/hooks/useReveal";
 import { RefCallback } from "@/app/types";
-import "./styles.css"
 
 type PropType = PropsWithChildren<{
-    children?: ReactNode,
-    nFrames?: number,
-    className?: string,
-    classOverride?: boolean,
-    animationName?: string
-    id?: string,
-    reff?: RefCallback,
-}>
+    children?: ReactNode;
+    className?: string;
+    id?: string;
+    reff?: RefCallback;
+    delayMs?: number;
+}>;
 
-const AnimatedScrollCard = ({reff, id, children, nFrames=100, className, classOverride=false, animationName}: Readonly<PropType>) => {
-    const [observeRef, animateRef] = useScrollAnimator({nFrames: nFrames});
-    const animationNameStr = animationName? `animate-[${animationName}_1s_paused]` : "";
-    let classNameStr = "card";
-    if(className) {
-        if(classOverride) {
-            classNameStr = className;
-        } else {
-            classNameStr = `card ${className}`;
-        }
-    }
-    return(
-        <div id={id} ref={(ref) => {
-            observeRef(ref);
-            animateRef(ref);
-            if(reff) {
-                reff(ref);
-            }
-        }} className={`${classNameStr} ${animationNameStr}`}>
+const AnimatedScrollCard = ({ reff, id, children, className, delayMs = 0 }: Readonly<PropType>) => {
+    const [revealed, observeRef] = useReveal();
+    return (
+        <div
+            id={id}
+            ref={(ref) => {
+                observeRef(ref);
+                if (reff) reff(ref);
+            }}
+            className={`reveal ${revealed ? "reveal-visible" : ""} ${className ?? ""}`}
+            style={delayMs ? { transitionDelay: `${delayMs}ms` } : undefined}
+        >
             {children}
         </div>
-    )
-}
-
+    );
+};
 
 export default AnimatedScrollCard;
