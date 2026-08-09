@@ -11,7 +11,7 @@ const Skills = ({ onIntersect }: Readonly<Props>) => {
     const id: SectionId = "skills";
     return (
         <Section id={id} eyebrow="04 / Skills" title="Tools I reach for" onIntersect={onIntersect}>
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 {skillGroups.map((group, i) => (
                     <AnimatedScrollCard key={group.title} delayMs={i * 80}>
                         <h3 className="text-accent mb-4 font-mono text-sm uppercase tracking-wide">

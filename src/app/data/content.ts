@@ -62,7 +62,7 @@ export const person = {
     supportingLine:
         "I build reliable AI-powered products, high-performance ML systems and scalable software.",
     location: "Nuremberg, Germany",
-    availability: "Open to Applied AI / ML Engineer roles in Germany",
+    availability: "Open to Applied AI, ML and performance-focused C++ engineering roles in Germany",
     email: "work@a-mamdouh.com",
 } as const;
 
@@ -279,10 +279,13 @@ export const skillGroups: SkillGroup[] = [
         ],
     },
     {
+        title: "C++ & Systems",
+        skills: ["C++", "Qt 6", "OpenCV", "OpenGL", "OpenCL", "Intel TBB", "CMake"],
+    },
+    {
         title: "Software Engineering",
         skills: [
             "Python",
-            "C++",
             "TypeScript / JavaScript",
             "ABAP",
             "Java",
@@ -301,20 +304,7 @@ export const skillGroups: SkillGroup[] = [
     },
     {
         title: "Infrastructure & Performance",
-        skills: [
-            "AWS",
-            "Docker",
-            "Kubernetes",
-            "Jenkins",
-            "Git",
-            "Linux",
-            "CMake",
-            "Qt",
-            "OpenCL",
-            "TBB",
-            "CI/CD",
-            "Firebase",
-        ],
+        skills: ["AWS", "Docker", "Kubernetes", "Jenkins", "Git", "Linux", "CI/CD", "Firebase"],
     },
 ];
 

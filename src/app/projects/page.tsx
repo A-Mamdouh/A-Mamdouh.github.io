@@ -26,6 +26,22 @@ export default function ProjectsArchivePage() {
                     that a short list can&apos;t fully show.
                 </p>
 
+                <div className="mt-12 max-w-2xl space-y-4 border-y border-hairline py-8">
+                    <p className="eyebrow">C++ &amp; Systems Engineering</p>
+                    <p className="text-base leading-relaxed">
+                        I use modern C++ where performance, control and cross-platform execution matter. My work
+                        includes real-time image processing with Qt 6 and OpenCV, GPU acceleration with OpenCL,
+                        parallel execution with Intel TBB and graphics programming with OpenGL.
+                    </p>
+                    <p className="text-muted text-base leading-relaxed">
+                        Askier explores modular real-time processing across camera, CPU and GPU workloads.
+                        Eden/NoClip is where I experiment with graphics-engine architecture, extensible interfaces
+                        and testable native systems. I&apos;m particularly interested in performance engineering,
+                        developer tooling, computer graphics and the intersection of C++ with production machine
+                        learning.
+                    </p>
+                </div>
+
                 <div className="mt-8 flex flex-wrap items-center gap-2">
                     <span className="eyebrow mr-1">Core C++ &amp; systems stack</span>
                     {CPP_STACK.map((item) => (
