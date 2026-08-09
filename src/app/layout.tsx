@@ -53,9 +53,6 @@ export const metadata: Metadata = {
         title: `${person.name} — ${person.headline}`,
         description: person.supportingLine,
     },
-    icons: {
-        icon: "/favicon.ico",
-    },
 };
 
 const personJsonLd = {
