@@ -60,7 +60,7 @@ export const person = {
     name: "Ahmed Mamdouh",
     headline: "Applied AI & Software Engineer",
     supportingLine:
-        "I build reliable AI-powered products, high-performance ML systems and scalable software.",
+        "I build reliable AI-powered products, high-performance systems and scalable software.",
     location: "Nuremberg, Germany",
     availability: "Open to Applied AI, ML and performance-focused C++ engineering roles in Germany",
     email: "work@a-mamdouh.com",
@@ -74,9 +74,9 @@ export const links = {
 } as const;
 
 export const about = [
-    "I'm an applied AI and software engineer who works across the full system around a model — architecture, APIs, data, performance, testing and user experience — not just the model itself.",
-    "My strongest results come from turning research-grade capabilities into software that runs reliably in production: computer-vision pipelines in industrial environments, enterprise financial systems, and customer-facing web and mobile products.",
-    "I'm most useful on teams building AI agents, RAG and tool-using systems who need someone equally comfortable in the backend, the ML pipeline, and the product itself.",
+    "I'm a software engineer who works at two different altitudes: applied AI systems — architecture, APIs, data, evaluation — and native, performance-critical C++, where control over memory, concurrency and the platform itself is the whole point.",
+    "The C++ side is modern C++ (14 through 20), Qt 6, OpenCV and Vulkan for real-time image processing and graphics-engine work, GoogleTest for testing, Boost where the standard library needs a hand. Askier and Eden/NoClip are where that shows up as modular, testable native software rather than one-off scripts.",
+    "The AI side is turning research-grade capabilities into software that runs reliably in production — computer-vision pipelines in industrial environments, and AI agents, RAG and tool-using systems built to be tested and maintained, not just demoed.",
 ];
 
 export const heroStats: Stat[] = [
@@ -280,7 +280,17 @@ export const skillGroups: SkillGroup[] = [
     },
     {
         title: "C++ & Systems",
-        skills: ["C++", "Qt 6", "OpenCV", "OpenGL", "OpenCL", "Intel TBB", "CMake"],
+        skills: [
+            "C++14/17/20",
+            "Qt 6",
+            "OpenCV",
+            "OpenGL",
+            "OpenCL",
+            "Intel TBB",
+            "Boost",
+            "GoogleTest",
+            "CMake",
+        ],
     },
     {
         title: "Software Engineering",

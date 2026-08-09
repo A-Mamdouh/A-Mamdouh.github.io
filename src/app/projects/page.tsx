@@ -12,7 +12,17 @@ export const metadata: Metadata = {
         "The full catalog of Ahmed Mamdouh's engineering projects, including the systems-level and C++ work behind Askier, Eden/NoClip and SkyFox.",
 };
 
-const CPP_STACK = ["C++", "Qt 6", "OpenCV", "OpenGL", "OpenCL", "Intel TBB", "CMake"];
+const CPP_STACK = [
+    "C++14/17/20",
+    "Qt 6",
+    "OpenCV",
+    "OpenGL",
+    "OpenCL",
+    "Intel TBB",
+    "Boost",
+    "GoogleTest",
+    "CMake",
+];
 
 export default function ProjectsArchivePage() {
     return (
@@ -29,9 +39,10 @@ export default function ProjectsArchivePage() {
                 <div className="mt-12 max-w-2xl space-y-4 border-y border-hairline py-8">
                     <p className="eyebrow">C++ &amp; Systems Engineering</p>
                     <p className="text-base leading-relaxed">
-                        I use modern C++ where performance, control and cross-platform execution matter. My work
-                        includes real-time image processing with Qt 6 and OpenCV, GPU acceleration with OpenCL,
-                        parallel execution with Intel TBB and graphics programming with OpenGL.
+                        I use modern C++ (14 through 20) where performance, control and cross-platform execution
+                        matter. My work includes real-time image processing with Qt 6 and OpenCV, GPU acceleration
+                        with OpenCL, parallel execution with Intel TBB and graphics programming with OpenGL, tested
+                        with GoogleTest and backed by Boost where the standard library needs a hand.
                     </p>
                     <p className="text-muted text-base leading-relaxed">
                         Askier explores modular real-time processing across camera, CPU and GPU workloads.
