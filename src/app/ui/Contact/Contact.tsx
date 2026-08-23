@@ -19,7 +19,7 @@ const Contact = ({ onIntersect }: Readonly<Props>) => {
             id={id}
             eyebrow="06 / Contact"
             title="Let's talk"
-            description="I'm actively interviewing for Applied AI / ML Engineer and AI-focused software roles in Germany. Email is the fastest way to reach me."
+            description="I’m actively interviewing for modern C++ roles in Germany, with additional interest in AI / ML and broader software development opportunities. Email is the fastest way to reach me."
             onIntersect={onIntersect}
         >
             <div className="flex flex-wrap items-center gap-3">

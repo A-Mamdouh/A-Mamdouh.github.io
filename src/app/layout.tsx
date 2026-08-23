@@ -5,14 +5,14 @@ import "./globals.css";
 
 const inter = Inter({
     subsets: ["latin"],
-    variable: "--font-sans",
+    variable: "--font-inter",
     display: "swap",
 });
 
 const plexMono = IBM_Plex_Mono({
     subsets: ["latin"],
     weight: ["400", "500", "600"],
-    variable: "--font-mono",
+    variable: "--font-plex-mono",
     display: "swap",
 });
 
@@ -77,11 +77,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${inter.variable} ${plexMono.variable}`}>
+        <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${plexMono.variable}`}>
             <body>
                 <script
                     type="application/ld+json"
-                    // eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
                 />
                 <a href="#main" className="skip-link">

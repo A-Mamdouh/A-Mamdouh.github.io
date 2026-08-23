@@ -20,16 +20,11 @@ const Stat = ({ stat }: Readonly<{ stat: StatData }>) => {
         if (!revealed || animatedRef.current || target === null) return;
         animatedRef.current = true;
 
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            setDisplay(target.toFixed(decimals));
-            return;
-        }
-
-        const duration = 900;
+        const duration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 900;
         const start = performance.now();
         let frame: number;
         const tick = (now: number) => {
-            const progress = Math.min((now - start) / duration, 1);
+            const progress = duration === 0 ? 1 : Math.min((now - start) / duration, 1);
             setDisplay((target * easeOutCubic(progress)).toFixed(decimals));
             if (progress < 1) {
                 frame = requestAnimationFrame(tick);
