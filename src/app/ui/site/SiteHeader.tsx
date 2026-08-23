@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
     TbBrandGithub as GithubIcon,
@@ -121,9 +122,9 @@ const SiteHeader = ({ visible, activeSection }: Readonly<SiteHeaderProps>) => {
                 }`}
             >
                 <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:px-10">
-                    <a href="/#top" className="font-mono text-sm font-semibold">
+                    <Link href="/#top" className="font-mono text-sm font-semibold">
                         {person.name}
-                    </a>
+                    </Link>
                     <nav className="hidden items-center gap-5 lg:flex">
                         {NAV_ITEMS.map((item) => (
                             <a

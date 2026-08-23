@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { TbArrowUpRight as ArrowIcon } from "react-icons/tb";
 import SiteHeader from "@/app/ui/site/SiteHeader";
 import Tag from "@/app/ui/kit/Tag";
@@ -153,12 +154,12 @@ export default function ProjectsArchivePage() {
                     </div>
                 </div>
 
-                <a
+                <Link
                     href="/#top"
                     className="text-muted mt-20 inline-flex items-center gap-2 font-mono text-sm hover:text-[var(--text)]"
                 >
                     ← Back home
-                </a>
+                </Link>
             </div>
         </main>
     );

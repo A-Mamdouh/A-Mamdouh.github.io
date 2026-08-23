@@ -17,8 +17,8 @@ function useReveal(threshold = 0.2): [boolean, RefCallback] {
         const node = nodeRef.current;
         if (!node) return;
         if (typeof IntersectionObserver === "undefined") {
-            setRevealed(true);
-            return;
+            const timeout = window.setTimeout(() => setRevealed(true), 0);
+            return () => window.clearTimeout(timeout);
         }
         const observer = new IntersectionObserver(
             ([entry]) => {
