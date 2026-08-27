@@ -18,7 +18,7 @@ const plexMono = IBM_Plex_Mono({
 
 const siteUrl = "https://a-mamdouh.com";
 const description =
-    "Applied AI & Software Engineer in Nuremberg, Germany. I build reliable AI-powered products, high-performance ML systems and scalable software — from computer vision and RAG to production performance engineering.";
+    "Applied AI & Software Engineer in Bavaria, Germany. I build reliable AI-powered products, high-performance ML systems and scalable software — from computer vision and RAG to production performance engineering.";
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
@@ -65,7 +65,7 @@ const personJsonLd = {
     email: person.email,
     address: {
         "@type": "PostalAddress",
-        addressLocality: "Nuremberg",
+        addressLocality: "Bavaria",
         addressCountry: "DE",
     },
     sameAs: [links.linkedin, links.github],
