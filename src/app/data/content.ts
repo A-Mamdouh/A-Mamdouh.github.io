@@ -61,7 +61,7 @@ export const person = {
     headline: "Applied AI & Software Engineer",
     supportingLine:
         "I build reliable AI-powered products, high-performance systems and scalable software.",
-    location: "Nuremberg, Germany",
+    location: "Bavaria, Germany",
     availability: "Open to Applied AI, ML and performance-focused C++ engineering roles in Germany",
     email: "work@a-mamdouh.com",
 } as const;
