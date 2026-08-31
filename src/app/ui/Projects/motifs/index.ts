@@ -4,10 +4,12 @@ import AskierMotif from "./AskierMotif";
 import EdenMotif from "./EdenMotif";
 import MipsMotif from "./MipsMotif";
 import PortalMotif from "./PortalMotif";
+import SwarmMotif from "./SwarmMotif";
 
 export const MOTIFS: Record<ProjectMotif, ComponentType> = {
     askier: AskierMotif,
     eden: EdenMotif,
     mips: MipsMotif,
     portal: PortalMotif,
+    swarm: SwarmMotif,
 };

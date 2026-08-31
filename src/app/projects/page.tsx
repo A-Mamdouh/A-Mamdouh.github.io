@@ -10,15 +10,18 @@ import { MOTIFS } from "@/app/ui/Projects/motifs";
 export const metadata: Metadata = {
     title: "Project Archive",
     description:
-        "The full catalog of Ahmed Mamdouh's engineering projects, including the systems-level and C++ work behind Askier, Eden/NoClip and SkyFox.",
+        "The full catalog of Ahmed Mamdouh's engineering projects, including Distributed Swarm Simulation, Askier and Eden/NoClip.",
 };
 
 const CPP_STACK = [
     "C++14/17/20",
+    "Fast DDS",
+    "IDL",
     "Qt 6",
     "OpenCV",
     "OpenGL",
     "OpenCL",
+    "Vulkan",
     "Intel TBB",
     "Boost",
     "GoogleTest",
@@ -41,16 +44,17 @@ export default function ProjectsArchivePage() {
                     <p className="eyebrow">C++ &amp; Systems Engineering</p>
                     <p className="text-base leading-relaxed">
                         I use modern C++ (14 through 20) where performance, control and cross-platform execution
-                        matter. My work includes real-time image processing with Qt 6 and OpenCV, GPU acceleration
-                        with OpenCL, parallel execution with Intel TBB and graphics programming with OpenGL, tested
-                        with GoogleTest and backed by Boost where the standard library needs a hand.
+                        matter. My work includes typed publish/subscribe middleware with Fast DDS, real-time image
+                        processing with Qt 6 and OpenCV, GPU acceleration with OpenCL, parallel execution with Intel
+                        TBB and graphics programming with OpenGL and Vulkan, tested with GoogleTest.
                     </p>
                     <p className="text-muted text-base leading-relaxed">
-                        Askier explores modular real-time processing across camera, CPU and GPU workloads.
-                        Eden/NoClip is where I experiment with graphics-engine architecture, extensible interfaces
-                        and testable native systems. I&apos;m particularly interested in performance engineering,
-                        developer tooling, computer graphics and the intersection of C++ with production machine
-                        learning.
+                        Distributed Swarm Simulation uses a lightweight swarm scenario to exercise independent
+                        processes, IDL-generated message types, recipient-filtered topics and dynamic discovery.
+                        Askier covers modular camera, CPU and GPU workloads, while Eden/NoClip is where I experiment
+                        with graphics-engine architecture and extensible interfaces. I&apos;m particularly interested in
+                        performance-critical systems, developer tooling, computer graphics and the intersection of
+                        C++ with production machine learning.
                     </p>
                 </div>
 
