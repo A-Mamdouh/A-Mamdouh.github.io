@@ -16,7 +16,7 @@ const Projects = ({ onIntersect }: Readonly<Props>) => {
             id={id}
             eyebrow="02 / Projects"
             title="Selected engineering projects"
-            description="Systems I designed and built end-to-end — real-time computer vision, a graphics engine, a processor simulator, and a full-stack operations platform."
+            description="Systems I designed and built end-to-end — Fast DDS process communication, real-time computer vision, a graphics engine and a full-stack operations platform."
             onIntersect={onIntersect}
         >
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
