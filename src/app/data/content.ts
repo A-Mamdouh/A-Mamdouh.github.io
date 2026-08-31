@@ -13,7 +13,7 @@ export type ExperienceEntry = {
     bullets: string[];
 };
 
-export type ProjectMotif = "askier" | "portal" | "eden" | "mips";
+export type ProjectMotif = "askier" | "portal" | "eden" | "mips" | "swarm";
 
 export type FeaturedProject = {
     id: string;
@@ -49,6 +49,10 @@ export type EducationEntry = {
 export type SkillGroup = {
     title: string;
     skills: string[];
+    evidence?: {
+        label: string;
+        href: string;
+    };
 };
 
 export type Language = {
@@ -75,7 +79,7 @@ export const links = {
 
 export const about = [
     "I'm a software engineer who works at two different altitudes: applied AI systems — architecture, APIs, data, evaluation — and native, performance-critical C++, where control over memory, concurrency and the platform itself is the whole point.",
-    "The C++ side is modern C++ (14 through 20), Qt 6, OpenCV and Vulkan for real-time image processing and graphics-engine work, GoogleTest for testing, Boost where the standard library needs a hand. Askier and Eden/NoClip are where that shows up as modular, testable native software rather than one-off scripts.",
+    "The C++ side is modern C++ (14 through 20), Fast DDS middleware, Qt 6, OpenCV and Vulkan for process communication, real-time image processing and graphics-engine work, with GoogleTest for testing. Distributed Swarm Simulation, Askier and Eden/NoClip are where that shows up as modular, testable native software rather than one-off scripts.",
     "The AI side is turning research-grade capabilities into software that runs reliably in production — computer-vision pipelines in industrial environments, and AI agents, RAG and tool-using systems built to be tested and maintained, not just demoed.",
 ];
 
@@ -139,6 +143,26 @@ export const experience: ExperienceEntry[] = [
 
 export const featuredProjects: FeaturedProject[] = [
     {
+        id: "distributed-swarm-simulation",
+        name: "Distributed Swarm Simulation",
+        tagline: "Fast DDS messaging across independent C++ processes",
+        description:
+            "A Fast DDS proof of concept that uses a swarm scenario to demonstrate typed publish/subscribe communication between independent C++ drone, simulation and Eden/Vulkan telemetry processes.",
+        highlights: [
+            "Four typed DDS topics",
+            "Recipient-filtered observations",
+            "IDL-generated message types",
+            "Dynamic process discovery",
+        ],
+        tags: ["C++17/20", "Fast DDS", "IDL", "CMake", "Vulkan"],
+        href: "https://github.com/A-Mamdouh/distributed-swarm-simulation",
+        motif: "swarm",
+        extraFacts: [
+            "The deliberately lightweight swarm scenario keeps the focus on middleware: the simulator publishes targeted observations while every drone owns its controller and state.",
+            "A separate UI subscribes to telemetry and publishes beacon commands; new drone processes can join while the demo is running.",
+        ],
+    },
+    {
         id: "askier",
         name: "Askier",
         tagline: "Real-time ASCII rendering, in native C++",
@@ -185,28 +209,20 @@ export const featuredProjects: FeaturedProject[] = [
         href: "https://github.com/A-Mamdouh/eden",
         motif: "eden",
     },
+];
+
+export const secondaryProjects: SecondaryProject[] = [
     {
-        id: "mips",
         name: "MIPS Processor",
-        tagline: "A processor, built from the instruction set up",
         description:
-            "A MIPS processor simulator and assembly-to-machine-code parser written in Python — registers, control logic, ALU, data memory and register files, modeled from scratch.",
-        highlights: [
-            "Full instruction-set simulation",
-            "Custom assembler and parser",
-            "Computer-architecture fundamentals",
-        ],
+            "A MIPS processor simulator and assembly-to-machine-code parser written in Python, with registers, control logic, ALU and memory modeled from scratch.",
         tags: ["Python", "Computer architecture", "Assembly"],
         href: "https://github.com/A-Mamdouh/MIPS-Simulator",
-        motif: "mips",
         extraFacts: [
             "Implements ADD, SUB, AND, OR, ADDI, LW, LH, SW, SH, SLL, SRL, NOP, J and BEQ.",
             "CLI-driven: assemble a program with -a, or simulate directly from an assembled binary.",
         ],
     },
-];
-
-export const secondaryProjects: SecondaryProject[] = [
     {
         name: "SkyFox",
         description:
@@ -282,15 +298,21 @@ export const skillGroups: SkillGroup[] = [
         title: "C++ & Systems",
         skills: [
             "C++14/17/20",
+            "Fast DDS",
             "Qt 6",
             "OpenCV",
             "OpenGL",
+            "Vulkan",
             "OpenCL",
             "Intel TBB",
             "Boost",
             "GoogleTest",
             "CMake",
         ],
+        evidence: {
+            label: "Distributed Swarm Simulation",
+            href: "https://github.com/A-Mamdouh/distributed-swarm-simulation",
+        },
     },
     {
         title: "Software Engineering",
