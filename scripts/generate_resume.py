@@ -254,7 +254,7 @@ def build_resume() -> None:
     y -= 1.0
     y = draw_wrapped(
         pdf,
-        "CORE FOCUS: BACKEND AND ENTERPRISE SYSTEMS | FULL-STACK APPLICATIONS | AI / ML | PERFORMANCE OPTIMIZATION | CI/CD AND CLOUD",
+        "CORE FOCUS: BACKEND AND ENTERPRISE SYSTEMS | FULL-STACK APPLICATIONS | AI / ML | PERFORMANCE OPTIMIZATION",
         LEFT,
         y,
         font=BOLD,
@@ -323,6 +323,11 @@ def build_resume() -> None:
     y = draw_section_heading(pdf, "Selected Engineering Projects", y)
     projects = [
         (
+            "Eden / NoClip",
+            "C++ graphics-engine project focused on software architecture, performance, and developer-friendly interfaces.",
+            "https://github.com/A-Mamdouh/eden",
+        ),
+        (
             "Distributed Swarm Simulation",
             "Built a Fast DDS demo with four typed topics across independent C++ processes, using recipient-filtered observations, IDL-generated message types, and dynamic process discovery.",
             "https://github.com/A-Mamdouh/distributed-swarm-simulation",
@@ -336,16 +341,6 @@ def build_resume() -> None:
             "Investors Portal",
             "Implemented policy-driven fee calculations and PDF contract generation, reducing manual work for investors and operations teams.",
             "https://github.com/A-Mamdouh/Sumerge-Investors-Portal",
-        ),
-        (
-            "Eden / NoClip",
-            "C++ graphics-engine project focused on software architecture, performance, and developer-friendly interfaces.",
-            "https://github.com/A-Mamdouh/eden",
-        ),
-        (
-            "MIPS Processor",
-            "Python implementation with an assembly-to-machine-code parser and simulations of registers, control logic, ALU, and memory.",
-            "https://github.com/A-Mamdouh/MIPS-Simulator",
         ),
     ]
     for name, description, url in projects:
@@ -367,7 +362,7 @@ def build_resume() -> None:
     y = draw_section_heading(pdf, "Selected Achievements", y)
     y = draw_wrapped(
         pdf,
-        "ACM-ICPC regional competition (2016 - 2018) | Catalyst Coding Competition (2019) | Google Code Jam (2020) | Google Foobar (2023)",
+        "Catalyst Coding Competition (2019) | Google Code Jam (2020) | Google Foobar (2023)",
         LEFT,
         y,
         size=8.15,

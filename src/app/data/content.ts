@@ -85,8 +85,8 @@ export const about = [
 
 export const heroStats: Stat[] = [
     {
-        value: "99.8%",
-        label: "inference latency cut",
+        value: "500x",
+        label: "inference time reduction",
         detail: "1,000ms → 2ms on a real-time computer-vision pipeline",
     },
     {
@@ -343,7 +343,6 @@ export const languages: Language[] = [
 ];
 
 export const achievements = [
-    "ACM-ICPC regional competitor (2016-2018)",
     "Catalyst Coding Competition (2019)",
     "Google Code Jam (2020)",
     "Google Foobar (2023)",
