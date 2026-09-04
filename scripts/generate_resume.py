@@ -330,7 +330,7 @@ def build_resume() -> None:
         (
             "Askier",
             "Cross-platform real-time ASCII rendering application using C++, Qt 6, OpenCV, OpenCL, and TBB, with modular image-processing and parallel-compute components.",
-            "https://github.com/A-Mamdouh/askier",
+            "https://github.com/a-h-i/askier",
         ),
         (
             "Investors Portal",
@@ -354,9 +354,9 @@ def build_resume() -> None:
 
     y = draw_section_heading(pdf, "Technical Skills", y)
     skill_lines = [
-        "Programming: ABAP, Python, C++, Java, TypeScript / JavaScript, SQL, Kotlin, C, Rust, Go",
-        "Web and backend: React, React Native, Next.js, Django, Flask, REST APIs, Redis, Firebase, AWS",
-        "Engineering and platforms: Fast DDS (publish/subscribe middleware), parallel systems, performance profiling, automated testing, CI/CD, Docker, Linux, Git, Jenkins, Kubernetes, CMake, Vulkan",
+        "Programming: Python, C++, Java, TypeScript, SQL, C",
+        "Web and backend: React, React Native, Next.js, Django, FastAPI, REST APIs, AWS",
+        "Engineering and platforms: parallel systems, performance profiling, automated testing, CI/CD, Docker, Linux, Git, CMake, Vulkan",
         "AI and data: PyTorch, TensorFlow, Keras, OpenCV, CUDA, NumPy, MLflow, computer vision, deep learning, NLP, generative AI, RAG, LangChain, LangGraph",
         "Languages: Arabic (native), English (fluent), German (beginner)",
     ]

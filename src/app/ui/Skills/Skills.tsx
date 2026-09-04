@@ -23,17 +23,6 @@ const Skills = ({ onIntersect }: Readonly<Props>) => {
                                 <Tag key={skill}>{skill}</Tag>
                             ))}
                         </div>
-                        {group.evidence && (
-                            <a
-                                href={group.evidence.href}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-muted hover:text-accent mt-4 inline-flex items-center gap-1.5 font-mono text-xs transition-colors"
-                            >
-                                Demonstrated in {group.evidence.label}
-                                <ArrowIcon className="shrink-0" aria-hidden="true" />
-                            </a>
-                        )}
                     </AnimatedScrollCard>
                 ))}
             </div>

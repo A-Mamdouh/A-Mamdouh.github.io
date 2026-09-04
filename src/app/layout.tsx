@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     description,
     keywords: [
         "Ahmed Mamdouh",
+        "modern C++ software engineer",
         "Applied AI Engineer",
         "Agentic AI Engineer",
         "Machine Learning Engineer",
