@@ -179,6 +179,26 @@ export const featuredProjects: FeaturedProject[] = [
         ],
     },
     {
+        id: "distributed-swarm-simulation",
+        name: "Distributed Swarm Simulation",
+        tagline: "Fast DDS messaging across independent C++ processes",
+        description:
+            "A Fast DDS proof of concept that uses a swarm scenario to demonstrate typed publish/subscribe communication between independent C++ drone, simulation and Eden/Vulkan telemetry processes.",
+        highlights: [
+            "Four typed DDS topics",
+            "Recipient-filtered observations",
+            "IDL-generated message types",
+            "Dynamic process discovery",
+        ],
+        tags: ["C++17/20", "Fast DDS", "IDL", "CMake", "Vulkan"],
+        href: "https://github.com/A-Mamdouh/distributed-swarm-simulation",
+        motif: "swarm",
+        extraFacts: [
+            "The deliberately lightweight swarm scenario keeps the focus on middleware: the simulator publishes targeted observations while every drone owns its controller and state.",
+            "A separate UI subscribes to telemetry and publishes beacon commands; new drone processes can join while the demo is running.",
+        ],
+    },
+    {
         id: "askier",
         name: "Askier",
         tagline: "Real-time ASCII rendering, in native C++",
