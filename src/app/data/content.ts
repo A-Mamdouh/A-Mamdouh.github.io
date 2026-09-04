@@ -78,9 +78,9 @@ export const links = {
 } as const;
 
 export const about = [
-    "I'm a software engineer who works at two different altitudes: applied AI systems — architecture, APIs, data, evaluation — and native, performance-critical C++, where control over memory, concurrency and the platform itself is the whole point.",
-    "The C++ side is modern C++ (14 through 20), Fast DDS middleware, Qt 6, OpenCV and Vulkan for process communication, real-time image processing and graphics-engine work, with GoogleTest for testing. Distributed Swarm Simulation, Askier and Eden/NoClip are where that shows up as modular, testable native software rather than one-off scripts.",
-    "The AI side is turning research-grade capabilities into software that runs reliably in production — computer-vision pipelines in industrial environments, and AI agents, RAG and tool-using systems built to be tested and maintained, not just demoed.",
+    "I'm a software enginer with a strong academic and applied background in software design and development. I've worked across different languages, platforms and technology stacks, but my approach tends to stay the same: I care about good system design, clear abstractions, performance, testing and actually delivering useful software on time. I like working closely with the people who use or depend on what I'm building, understanding the problem behind the requirements and making technical decisions with that end goal in mind. Test-driven development and maintainability are important parts of how I work, whether I'm building a real-time system, a user application, or an AI-based system.",
+    "My main technical interest are C++ and artificial intelligence. I enjoy modern C++ its combination of expressive software design and low-level control when it's needed. Currently, my main hobby project is building my own graphics engine, which gives me plenty of room to explore both.",
+    "My interest in AI comes from first-hand experience with the gap between research and production software. A major focus on my work has been bridging that gap and turning research ideas and simple scripts into reliable, production-ready solutions. My academic background in AI and professional work have taken me through machine learning, computer vision, semantic reasoning, RAG, and agentic workflows, with the same emphasis on architecture, evaluation, performance, testing, and delivery that I bring to the rest of my software work.",
 ];
 
 export const heroStats: Stat[] = [
@@ -142,6 +142,42 @@ export const experience: ExperienceEntry[] = [
 ];
 
 export const featuredProjects: FeaturedProject[] = [
+        {
+        id: "eden",
+        name: "Eden / NoClip",
+        tagline: "A hackable graphics engine written in modern C++",
+        description:
+            "A platform-independent graphics engine focused on performance, modular system design and developer-friendly interfaces. built to be extensible and hackable.",
+        highlights: [
+            "Modern C++ architecture",
+            "Cross-platform rendering",
+            "Performance-first engine design",
+            "Test-suite-driven development",
+        ],
+        tags: ["C++20", "Graphics", "Systems design"],
+        href: "https://github.com/A-Mamdouh/eden",
+        motif: "eden",
+    },
+    {
+        id: "distributed-swarm-simulation",
+        name: "Distributed Swarm Simulation using",
+        tagline: "Fast DDS messaging across independent C++ processes",
+        description:
+            "A Fast DDS proof of concept that uses a swarm scenario to demonstrate typed publish/subscribe communication between independent C++ drone, simulation and Eden telemetry processes.",
+        highlights: [
+            "Four typed DDS topics",
+            "Recipient-filtered observations",
+            "IDL-generated message types",
+            "Dynamic process discovery",
+        ],
+        tags: ["C++17/20", "Fast DDS", "IDL", "CMake", "Eden"],
+        href: "https://github.com/A-Mamdouh/distributed-swarm-simulation",
+        motif: "swarm",
+        extraFacts: [
+            "The deliberately lightweight swarm scenario keeps the focus on middleware: the simulator publishes targeted observations while every drone owns its controller and state.",
+            "A separate UI subscribes to telemetry and publishes beacon commands; new drone processes can join while the demo is running.",
+        ],
+    },
     {
         id: "distributed-swarm-simulation",
         name: "Distributed Swarm Simulation",
@@ -175,7 +211,7 @@ export const featuredProjects: FeaturedProject[] = [
             "Real-time camera and image pipelines",
         ],
         tags: ["C++", "Qt 6", "OpenCV", "OpenCL", "TBB"],
-        href: "https://github.com/A-Mamdouh/askier",
+        href: "https://github.com/a-h-i/askier",
         motif: "askier",
     },
     {
@@ -192,22 +228,6 @@ export const featuredProjects: FeaturedProject[] = [
         tags: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
         href: "https://github.com/A-Mamdouh/Sumerge-Investors-Portal",
         motif: "portal",
-    },
-    {
-        id: "eden",
-        name: "Eden / NoClip",
-        tagline: "A modern C++ graphics engine",
-        description:
-            "A platform-independent graphics engine focused on performance, modular system design and developer-friendly interfaces — built to be extensible and hackable.",
-        highlights: [
-            "Modern C++ architecture",
-            "Cross-platform rendering",
-            "Performance-first engine design",
-            "Test-suite-driven development",
-        ],
-        tags: ["C++", "Graphics", "Systems design"],
-        href: "https://github.com/A-Mamdouh/eden",
-        motif: "eden",
     },
 ];
 
@@ -285,7 +305,6 @@ export const skillGroups: SkillGroup[] = [
             "NumPy",
             "OpenCV",
             "CUDA",
-            "MLflow",
             "Label Studio",
             "LangChain",
             "LangGraph",
@@ -321,33 +340,30 @@ export const skillGroups: SkillGroup[] = [
             "TypeScript / JavaScript",
             "ABAP",
             "Java",
-            "Kotlin",
-            "Go",
-            "Rust",
             "React",
             "Next.js",
             "React Native",
             "Django",
-            "Flask",
+            "FastAPI",
             "REST APIs",
             "SQL",
-            "Redis",
+            "Redis"
         ],
     },
     {
         title: "Infrastructure & Performance",
-        skills: ["AWS", "Docker", "Kubernetes", "Jenkins", "Git", "Linux", "CI/CD", "Firebase"],
+        skills: ["AWS", "Docker", "Git", "Linux", "CI/CD"],
     },
 ];
 
 export const languages: Language[] = [
     { name: "Arabic", level: "Native" },
     { name: "English", level: "Fluent" },
-    { name: "German", level: "Beginner" },
+    { name: "German", level: "Beginner (B1)" },
 ];
 
 export const achievements = [
-    "ACM-ICPC regional competitor (2016–2018)",
+    "ACM-ICPC regional competitor (2016-2018)",
     "Catalyst Coding Competition (2019)",
     "Google Code Jam (2020)",
     "Google Foobar (2023)",

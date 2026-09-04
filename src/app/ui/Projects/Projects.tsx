@@ -28,9 +28,9 @@ const Projects = ({ onIntersect }: Readonly<Props>) => {
                             delayMs={(i % 2) * 100}
                             className="group overflow-hidden rounded-2xl border border-hairline bg-surface"
                         >
-                            <a href={project.href} target="_blank" rel="noreferrer" className="flex h-full flex-col">
-                                <div className="text-accent flex h-32 items-center justify-center border-b border-hairline p-6">
-                                    <div className="w-28">
+                            <a href={project.href} target="_blank" rel="noreferrer" className=" md:items-center flex h-full flex-col md:flex-row">
+                                <div className=" flex h-30 items-center justify-center border-b md:border-b-0 md:border-r border-hairline p-6">
+                                    <div className="text-accent w-24">
                                         <Motif />
                                     </div>
                                 </div>
@@ -40,15 +40,6 @@ const Projects = ({ onIntersect }: Readonly<Props>) => {
                                         <ArrowIcon className="text-muted mt-1 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                     </div>
                                     <p className="text-muted mt-1 text-sm">{project.tagline}</p>
-                                    <p className="mt-4 text-sm leading-relaxed">{project.description}</p>
-                                    <ul className="text-muted mt-4 space-y-1 text-sm">
-                                        {project.highlights.map((highlight) => (
-                                            <li key={highlight} className="flex gap-2">
-                                                <span className="text-accent">·</span>
-                                                {highlight}
-                                            </li>
-                                        ))}
-                                    </ul>
                                     <div className="mt-5 flex flex-wrap gap-2">
                                         {project.tags.map((tag) => (
                                             <Tag key={tag}>{tag}</Tag>
@@ -59,32 +50,6 @@ const Projects = ({ onIntersect }: Readonly<Props>) => {
                         </AnimatedScrollCard>
                     );
                 })}
-            </div>
-
-            <div className="mt-14">
-                <p className="eyebrow mb-5">More projects</p>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {secondaryProjects.map((project) => (
-                        <a
-                            key={project.name}
-                            href={project.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="group rounded-xl border border-hairline p-5 transition-colors hover:bg-surface"
-                        >
-                            <div className="flex items-start justify-between gap-3">
-                                <h4 className="font-semibold">{project.name}</h4>
-                                <ArrowIcon className="text-muted mt-0.5 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                            </div>
-                            <p className="text-muted mt-2 text-sm leading-relaxed">{project.description}</p>
-                            <div className="mt-3 flex flex-wrap gap-2">
-                                {project.tags.map((tag) => (
-                                    <Tag key={tag}>{tag}</Tag>
-                                ))}
-                            </div>
-                        </a>
-                    ))}
-                </div>
             </div>
 
             <a
