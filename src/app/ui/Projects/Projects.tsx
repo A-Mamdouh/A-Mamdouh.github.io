@@ -15,8 +15,8 @@ const Projects = ({ onIntersect }: Readonly<Props>) => {
         <Section
             id={id}
             eyebrow="02 / Projects"
-            title="Selected engineering projects"
-            description="Systems I designed and built end-to-end — Fast DDS process communication, real-time computer vision, a graphics engine and a full-stack operations platform."
+            title="Featured projects"
+            description="Selected work spanning modern C++, graphics, distributed systems, computer vision, and full-stack product development."
             onIntersect={onIntersect}
         >
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -40,6 +40,7 @@ const Projects = ({ onIntersect }: Readonly<Props>) => {
                                         <ArrowIcon className="text-muted mt-1 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                     </div>
                                     <p className="text-muted mt-1 text-sm">{project.tagline}</p>
+                                    <p className="mt-3 text-sm leading-relaxed">{project.description}</p>
                                     <div className="mt-5 flex flex-wrap gap-2">
                                         {project.tags.map((tag) => (
                                             <Tag key={tag}>{tag}</Tag>

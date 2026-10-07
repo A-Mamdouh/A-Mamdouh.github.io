@@ -9,7 +9,7 @@ type Props = { onIntersect?: (ratio: number | undefined) => void };
 const Experience = ({ onIntersect }: Readonly<Props>) => {
     const id: SectionId = "experience";
     return (
-        <Section id={id} eyebrow="03 / Experience" title="Where I've built things" onIntersect={onIntersect}>
+        <Section id={id} eyebrow="03 / Experience" title="Professional experience" onIntersect={onIntersect}>
             <div className="border-hairline divide-[var(--border)] divide-y border-t">
                 {experience.map((job, i) => (
                     <AnimatedScrollCard

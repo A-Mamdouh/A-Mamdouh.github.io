@@ -142,11 +142,12 @@ const SiteHeader = ({ visible, activeSection }: Readonly<SiteHeaderProps>) => {
                         <ThemeToggle />
                         <Button
                             href={links.resume}
+                            variant="primary"
                             download="Ahmed-Mamdouh-Resume.pdf"
                             className="hidden lg:inline-flex"
                             icon={<DownloadIcon />}
                         >
-                            Résumé
+                            Resume
                         </Button>
                         <button
                             type="button"
@@ -192,7 +193,7 @@ const SiteHeader = ({ visible, activeSection }: Readonly<SiteHeaderProps>) => {
                             <SocialLink href={links.github} Icon={GithubIcon} label="GitHub profile" />
                         </div>
                         <Button href={links.resume} download="Ahmed-Mamdouh-Resume.pdf" icon={<DownloadIcon />}>
-                            Résumé
+                            Resume
                         </Button>
                     </div>
                 </div>

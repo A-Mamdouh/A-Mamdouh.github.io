@@ -47,17 +47,22 @@ const Hero = ({ activeSection }: Readonly<HeroProps>) => {
                     <p className="mt-6 max-w-2xl text-lg md:text-xl">{person.supportingLine}</p>
 
                     <div className="mt-9 flex flex-wrap items-center gap-3">
-                        <Button href={links.email} variant="primary" icon={<EmailIcon />}>
-                            Email me
-                        </Button>
-                        <Button href={links.linkedin} external icon={<LinkedinIcon />}>
-                            LinkedIn
+                        <Button
+                            href={links.resume}
+                            variant="primary"
+                            download="Ahmed-Mamdouh-Resume.pdf"
+                            icon={<DownloadIcon />}
+                        >
+                            Resume
                         </Button>
                         <Button href={links.github} external icon={<GithubIcon />}>
                             GitHub
                         </Button>
-                        <Button href={links.resume} download="Ahmed-Mamdouh-Resume.pdf" icon={<DownloadIcon />}>
-                            Résumé
+                        <Button href={links.email} icon={<EmailIcon />}>
+                            Email me
+                        </Button>
+                        <Button href={links.linkedin} external icon={<LinkedinIcon />}>
+                            LinkedIn
                         </Button>
                     </div>
 

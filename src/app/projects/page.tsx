@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const CPP_STACK = [
-    "C++14/17/20",
+    "C++17/20",
     "Fast DDS",
     "IDL",
     "Qt 6",
@@ -23,7 +23,6 @@ const CPP_STACK = [
     "OpenCL",
     "Vulkan",
     "Intel TBB",
-    "Boost",
     "GoogleTest",
     "CMake",
 ];
@@ -36,14 +35,14 @@ export default function ProjectsArchivePage() {
                 <p className="eyebrow mb-3">Archive</p>
                 <h1 className="mb-4 text-4xl font-semibold tracking-tight md:text-5xl">All projects</h1>
                 <p className="text-muted max-w-2xl text-lg">
-                    The fuller picture beyond the homepage highlights — including the systems-level and C++ work
-                    that a short list can&apos;t fully show.
+                    The broader project catalog behind my C++-focused profile, including systems, computer vision,
+                    graphics, and product-development work.
                 </p>
 
                 <div className="mt-12 max-w-2xl space-y-4 border-y border-hairline py-8">
                     <p className="eyebrow">C++ &amp; Systems Engineering</p>
                     <p className="text-base leading-relaxed">
-                        I use modern C++ (14 through 20) where performance, control and cross-platform execution
+                        I use modern C++17/20 where performance, control, and cross-platform execution
                         matter. My work includes typed publish/subscribe middleware with Fast DDS, real-time image
                         processing with Qt 6 and OpenCV, GPU acceleration with OpenCL, parallel execution with Intel
                         TBB and graphics programming with OpenGL and Vulkan, tested with GoogleTest.

@@ -11,7 +11,7 @@ const About = ({ onIntersect }: Readonly<Props>) => {
         <Section
             id={id}
             eyebrow="01 / About"
-            title="Applied AI and performance-critical C++"
+            title="Modern C++ backed by production experience"
             onIntersect={onIntersect}
         >
             <div className="max-w-3xl space-y-5 text-lg leading-relaxed md:text-xl">

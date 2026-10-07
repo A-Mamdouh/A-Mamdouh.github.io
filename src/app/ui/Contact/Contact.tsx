@@ -19,21 +19,26 @@ const Contact = ({ onIntersect }: Readonly<Props>) => {
             id={id}
             eyebrow="06 / Contact"
             title="Let's talk"
-            description="I'm actively interviewing for modern C++ roles in Germany, with additional interest in AI / ML and broader software development opportunities. Email is the fastest way to reach me."
+            description="I'm open to C++ software development and systems programming roles across Germany. My computer-vision and applied-AI background is especially relevant where performance, simulation, or production ML intersects with modern C++. Email is the fastest way to reach me."
             onIntersect={onIntersect}
         >
             <div className="flex flex-wrap items-center gap-3">
-                <Button href={links.email} variant="primary" icon={<EmailIcon />}>
-                    {person.email}
-                </Button>
-                <Button href={links.linkedin} external icon={<LinkedinIcon />}>
-                    LinkedIn
+                <Button
+                    href={links.resume}
+                    variant="primary"
+                    download="Ahmed-Mamdouh-Resume.pdf"
+                    icon={<DownloadIcon />}
+                >
+                    Resume
                 </Button>
                 <Button href={links.github} external icon={<GithubIcon />}>
                     GitHub
                 </Button>
-                <Button href={links.resume} download="Ahmed-Mamdouh-Resume.pdf" icon={<DownloadIcon />}>
-                    Résumé
+                <Button href={links.email} icon={<EmailIcon />}>
+                    {person.email}
+                </Button>
+                <Button href={links.linkedin} external icon={<LinkedinIcon />}>
+                    LinkedIn
                 </Button>
             </div>
 
