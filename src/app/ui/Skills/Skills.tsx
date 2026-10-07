@@ -11,7 +11,7 @@ type Props = { onIntersect?: (ratio: number | undefined) => void };
 const Skills = ({ onIntersect }: Readonly<Props>) => {
     const id: SectionId = "skills";
     return (
-        <Section id={id} eyebrow="04 / Skills" title="Tools I reach for" onIntersect={onIntersect}>
+        <Section id={id} eyebrow="04 / Skills" title="C++-first technical toolkit" onIntersect={onIntersect}>
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 {skillGroups.map((group, i) => (
                     <AnimatedScrollCard key={group.title} delayMs={i * 80}>

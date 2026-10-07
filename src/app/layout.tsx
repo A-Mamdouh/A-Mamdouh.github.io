@@ -18,7 +18,7 @@ const plexMono = IBM_Plex_Mono({
 
 const siteUrl = "https://a-mamdouh.com";
 const description =
-    "Applied AI & Software Engineer in Bavaria, Germany. I build reliable AI-powered products, high-performance ML systems and scalable software — from computer vision and RAG to production performance engineering.";
+    "C++ Software Developer in Nürnberg, Germany, with an M.Sc. in Artificial Intelligence and experience in enterprise software, computer vision, and performance.";
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
@@ -29,14 +29,15 @@ export const metadata: Metadata = {
     description,
     keywords: [
         "Ahmed Mamdouh",
-        "modern C++ software engineer",
-        "Applied AI Engineer",
-        "Agentic AI Engineer",
-        "Machine Learning Engineer",
-        "AI Software Engineer Germany",
-        "Full-stack AI Engineer",
-        "Computer Vision Engineer",
-        "RAG engineer",
+        "C++ Software Developer",
+        "C++ Software Developer Germany",
+        "modern C++",
+        "C++17",
+        "C++20",
+        "systems programming",
+        "computer graphics",
+        "computer vision",
+        "performance engineering",
     ],
     authors: [{ name: person.name, url: siteUrl }],
     creator: person.name,
@@ -45,14 +46,14 @@ export const metadata: Metadata = {
         type: "website",
         url: siteUrl,
         title: `${person.name} — ${person.headline}`,
-        description: person.supportingLine,
+        description,
         siteName: person.name,
         locale: "en_US",
     },
     twitter: {
         card: "summary_large_image",
         title: `${person.name} — ${person.headline}`,
-        description: person.supportingLine,
+        description,
     },
 };
 
@@ -66,7 +67,8 @@ const personJsonLd = {
     email: person.email,
     address: {
         "@type": "PostalAddress",
-        addressLocality: "Bavaria",
+        addressLocality: "Nürnberg",
+        addressRegion: "Bavaria",
         addressCountry: "DE",
     },
     sameAs: [links.linkedin, links.github],

@@ -62,11 +62,11 @@ export type Language = {
 
 export const person = {
     name: "Ahmed Mamdouh",
-    headline: "Applied AI & Software Engineer",
+    headline: "C++ Software Developer",
     supportingLine:
-        "I build reliable AI-powered products, high-performance systems and scalable software.",
-    location: "Bavaria, Germany",
-    availability: "Open to Applied AI, ML and performance-focused C++ engineering roles in Germany",
+        "Recent M.Sc. Artificial Intelligence graduate with professional software development experience and a focus on modern C++, performance, and reliable systems. I build graphics, distributed simulations, real-time computer-vision software, and production applications.",
+    location: "Nürnberg, Germany",
+    availability: "Open to C++ software development roles across Germany",
     email: "work@a-mamdouh.com",
 } as const;
 
@@ -78,16 +78,15 @@ export const links = {
 } as const;
 
 export const about = [
-    "I'm a software enginer with a strong academic and applied background in software design and development. I've worked across different languages, platforms and technology stacks, but my approach tends to stay the same: I care about good system design, clear abstractions, performance, testing and actually delivering useful software on time. I like working closely with the people who use or depend on what I'm building, understanding the problem behind the requirements and making technical decisions with that end goal in mind. Test-driven development and maintainability are important parts of how I work, whether I'm building a real-time system, a user application, or an AI-based system.",
-    "My main technical interest are C++ and artificial intelligence. I enjoy modern C++ its combination of expressive software design and low-level control when it's needed. Currently, my main hobby project is building my own graphics engine, which gives me plenty of room to explore both.",
-    "My interest in AI comes from first-hand experience with the gap between research and production software. A major focus on my work has been bridging that gap and turning research ideas and simple scripts into reliable, production-ready solutions. My academic background in AI and professional work have taken me through machine learning, computer vision, semantic reasoning, RAG, and agentic workflows, with the same emphasis on architecture, evaluation, performance, testing, and delivery that I bring to the rest of my software work.",
+    "I'm a software developer with professional experience across enterprise software, industrial computer vision, and product development. I care about clear architecture, explicit ownership, performance, testing, and maintainable code, and I enjoy working closely with the people who use the systems I build.",
+    "My current C++ work includes Eden, a C++20 graphics engine; a distributed swarm simulation using Fast DDS; and contributions to Askier's OpenCL and OpenCV image-processing pipeline. My M.Sc. in Artificial Intelligence is a supporting strength, especially where modern C++ meets computer vision, simulation, and performance-sensitive software.",
 ];
 
 export const heroStats: Stat[] = [
     {
-        value: "500x",
+        value: "500×",
         label: "inference time reduction",
-        detail: "1,000ms → 2ms on a real-time computer-vision pipeline",
+        detail: "1,000 ms → 2 ms on a real-time computer-vision pipeline",
     },
     {
         value: "30%",
@@ -104,26 +103,26 @@ export const heroStats: Stat[] = [
 export const experience: ExperienceEntry[] = [
     {
         company: "SAP Fioneer",
-        role: "Software Developer (ABAP)",
-        location: "Walldorf, Germany",
-        start: "Oct 2024",
-        end: "Present",
+        role: "Software Developer",
+        location: "Walldorf / Remote, Germany",
+        start: "2024",
+        end: "2026",
         bullets: [
-            "Build parallel, scalable software for SAP S/4HANA and the Financial Products Subledger (FPSL) in financial-services environments.",
+            "Build and maintain features for the Financial Products Subledger (FPSL) in enterprise financial software.",
             "Design and optimize high-performance ABAP SQL queries and data-oriented processing for financial applications.",
-            "Contribute across architecture discussions, pair programming, code reviews and modernization of internal developer and quality tooling.",
+            "Contribute to architecture discussions, pair programming, code reviews, and modernization of internal developer and quality tooling.",
         ],
     },
     {
         company: "Primetals Technologies",
-        role: "Working Student Developer — Computer Vision / ML",
+        role: "CV/ML Student Developer",
         location: "Erlangen, Germany",
-        start: "Apr 2023",
-        end: "Nov 2024",
+        start: "2023",
+        end: "2024",
         bullets: [
             "Built AI-powered assistants and computer-vision pipelines for real-time industrial workflows in steel mills.",
             "Trained and fine-tuned computer-vision models and hardened them into production-ready pipelines.",
-            "Cut inference latency on an existing pipeline from ~1,000ms to 2ms — a 500x speedup that enabled real-time use.",
+            "Cut inference latency on an existing pipeline from ~1,000 ms to 2 ms — a 500× speedup that enabled real-time use.",
             "Extended reusable internal ML tooling for future industrial AI projects.",
         ],
     },
@@ -131,10 +130,10 @@ export const experience: ExperienceEntry[] = [
         company: "Sequel Solutions",
         role: "Junior Software Developer",
         location: "Cairo, Egypt",
-        start: "Sep 2020",
-        end: "Jul 2021",
+        start: "2020",
+        end: "2021",
         bullets: [
-            "Built web and mobile features for a vacation-booking platform with JavaScript, React Native, Firebase, Docker and AWS.",
+            "Built web and mobile features for a vacation-booking platform with JavaScript, React Native, Firebase, and Docker.",
             "Modernized legacy code, cutting page-load time by 30% and reaching a perfect Lighthouse score.",
             "Added backend caching and contributed mobile-specific functionality.",
         ],
@@ -142,17 +141,17 @@ export const experience: ExperienceEntry[] = [
 ];
 
 export const featuredProjects: FeaturedProject[] = [
-        {
+    {
         id: "eden",
         name: "Eden / NoClip",
-        tagline: "A hackable graphics engine written in modern C++",
+        tagline: "Modern C++20 graphics library and engine project",
         description:
-            "A platform-independent graphics engine focused on performance, modular system design and developer-friendly interfaces. built to be extensible and hackable.",
+            "A modular graphics library and engine built in C++20 with Vulkan to deepen hands-on experience in low-level graphics and systems programming.",
         highlights: [
-            "Modern C++ architecture",
-            "Cross-platform rendering",
-            "Performance-first engine design",
-            "Test-suite-driven development",
+            "RAII and explicit resource ownership",
+            "Reusable engine abstractions",
+            "CMake-based project structure",
+            "Performance-conscious design",
         ],
         tags: ["C++20", "Graphics", "Systems design"],
         href: "https://github.com/A-Mamdouh/eden",
@@ -181,14 +180,14 @@ export const featuredProjects: FeaturedProject[] = [
     {
         id: "askier",
         name: "Askier",
-        tagline: "Real-time ASCII rendering, in native C++",
+        tagline: "GPU-accelerated real-time image processing in C++",
         description:
-            "A modular, cross-platform application that turns live camera feeds and images into real-time ASCII art, built with Qt 6, C++ and OpenCV.",
+            "Contributed custom OpenCL kernels and OpenCV processing to an existing cross-platform application that turns camera feeds and images into real-time ASCII art.",
         highlights: [
-            "OpenCL GPU acceleration",
-            "TBB parallelism for responsive processing",
-            "Modular, cross-platform architecture",
-            "Real-time camera and image pipelines",
+            "Custom OpenCL image-processing kernels",
+            "Additional processing through OpenCV",
+            "GPU acceleration and parallel processing",
+            "Qt-based cross-platform application",
         ],
         tags: ["C++", "Qt 6", "OpenCV", "OpenCL", "TBB"],
         href: "https://github.com/a-h-i/askier",
@@ -256,13 +255,13 @@ export const secondaryProjects: SecondaryProject[] = [
 
 export const education: EducationEntry[] = [
     {
-        degree: "M.Sc. Artificial Intelligence",
+        degree: "M.Sc. Artificial Intelligence — completed 2025",
         school: "FAU Erlangen-Nuremberg",
         grade: "1.9",
         start: "2022",
         end: "2025",
         details:
-            "Computer vision, deep learning, NLP, generative AI, information visualization, high-performance computing minor. Teaching assistant for Artificial Intelligence II.",
+            "Minor in High-Performance Computing, with a focus on modern C++17/20, RAII, resource management, and performance-oriented programming.",
     },
     {
         degree: "B.Sc. Computer Science and Engineering",
@@ -271,42 +270,38 @@ export const education: EducationEntry[] = [
         start: "2016",
         end: "2021",
         details:
-            "Software engineering, algorithms and data structures, DevOps, embedded and cyber-physical systems, data engineering. Student researcher and autonomous smart-lab team lead.",
+            "Computer science and software engineering fundamentals, including data structures, algorithms, distributed systems, embedded systems, and data engineering.",
     },
 ];
 
 export const skillGroups: SkillGroup[] = [
     {
-        title: "Applied AI & ML",
+        title: "Modern C++ & Systems",
         skills: [
-            "PyTorch",
-            "TensorFlow",
-            "Keras",
-            "NumPy",
-            "OpenCV",
-            "CUDA",
-            "Label Studio",
-            "LangChain",
-            "LangGraph",
-            "RAG",
-            "Vector databases",
-            "Tool-using agents",
+            "C++17/20",
+            "C",
+            "RAII",
+            "Resource management",
+            "CMake",
+            "GoogleTest",
+            "Distributed systems",
         ],
+        evidence: {
+            label: "Eden",
+            href: "https://github.com/A-Mamdouh/eden",
+        },
     },
     {
-        title: "C++ & Systems",
+        title: "Graphics, Concurrency & Performance",
         skills: [
-            "C++14/17/20",
-            "Fast DDS",
-            "Qt 6",
-            "OpenCV",
-            "OpenGL",
             "Vulkan",
+            "OpenGL",
             "OpenCL",
+            "Qt 6",
             "Intel TBB",
-            "Boost",
-            "GoogleTest",
-            "CMake",
+            "Fast DDS",
+            "Performance optimization",
+            "Parallel processing",
         ],
         evidence: {
             label: "Distributed Swarm Simulation",
@@ -314,25 +309,31 @@ export const skillGroups: SkillGroup[] = [
         },
     },
     {
-        title: "Software Engineering",
+        title: "Computer Vision & Applied AI",
         skills: [
             "Python",
-            "TypeScript / JavaScript",
-            "ABAP",
-            "Java",
-            "React",
-            "Next.js",
-            "React Native",
-            "Django",
-            "FastAPI",
-            "REST APIs",
-            "SQL",
-            "Redis"
+            "PyTorch",
+            "ONNX",
+            "OpenCV",
+            "ML pipelines",
+            "RAG",
+            "Agentic workflows",
         ],
     },
     {
-        title: "Infrastructure & Performance",
-        skills: ["AWS", "Docker", "Git", "Linux", "CI/CD"],
+        title: "Software Engineering",
+        skills: [
+            "ABAP",
+            "JavaScript / TypeScript",
+            "React",
+            "React Native",
+            "Java",
+            "REST APIs",
+            "SQL",
+            "Git",
+            "CI/CD",
+            "Docker",
+        ],
     },
 ];
 
